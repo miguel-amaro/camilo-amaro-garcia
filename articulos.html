@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Camilo Amaro García (Web)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		/* Contenedor de la lista */
+.lista-articulos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre un artículo y otro */
+  padding: 10px;
+}
+
+/* La tarjeta del artículo (Efecto tabla con bordes y sombra) */
+.articulo-card {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Pequeño efecto al pasar el ratón por encima */
+.articulo-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Columna de la imagen */
+.articulo-imagen {
+  flex: 0 0 200px; /* Ancho fijo para la imagen de la izquierda (ajustable) */
+  max-width: 200px;
+  background: #fcfcfc;
+}
+
+.articulo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la foto se adapte al recuadro sin deformarse */
+  display: block;
+}
+
+/* Columna del contenido */
+.articulo-contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Fila superior derecha (Referencia + Botones) */
+.articulo-cabecera {
+  display: flex;
+  justify-content: space-between; /* Manda la referencia a la izquierda y botones a la derecha */
+  align-items: center;
+  border-bottom: 1px dashed #eef0f2; /* Línea divisoria fina */
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Texto de la referencia */
+.articulo-referencia {
+  font-weight: bold;
+  color: #555555;
+  font-family: monospace; /* Estilo tipo código/archivo */
+  font-size: 1.1rem;
+}
+
+/* Contenedor de botones */
+.articulo-acciones {
+  display: flex;
+  gap: 8px;
+}
+
+/* Estilo unificado para ambos botones (Diseño rojo/coral suave) */
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* Espacio entre el icono y el texto */
+  
+  /* Relleno ajustado: compacto arriba/abajo (3px) y más a los lados (12px) */
+  padding: 3px 12px; 
+  
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  
+  /* Forzar minúsculas con la primera letra en Mayúscula */
+  text-transform: capitalize; 
+  
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  
+  /* FONDO: Rojo claro / Coral suave */
+  background: #fbeae9; 
+  /* TEXTO E ICONO: Rojo oscuro / Granate elegante */
+  color: #a63a32; 
+  
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Efecto al pasar el ratón por encima (se oscurece el fondo un poco) */
+.btn-accion:hover {
+  background: #f7d4d1;
+  color: #822b24;
+}
+
+/* Tamaño de los iconos SVG dentro del botón */
+.btn-accion svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* Copia el color del texto automáticamente (rojo oscuro) */
+  display: block;
+}
+
+/* Puedes ponerlo aquí, al final de la zona normal: */
+.articulo-referencia {
+  font-family: "Arial Narrow"; 
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+
+  /* 1. La tarjeta pasa a ser una columna vertical pura */
+  .articulo-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. El truco maestro: disolvemos la cabecera en el móvil para poder mover sus piezas */
+  .articulo-cabecera {
+    display: contents; 
+  }
+
+  /* 3. El Autor (referencia) se queda arriba del todo */
+  .articulo-referencia {
+    order: 1;
+    display: block;
+    width: 100%;
+    margin-bottom: 8px; /* Separación pequeña antes del título */
+    text-align: left;   /* Alineado a la izquierda como en una bibliografía */
+  }
+
+  /* 4. El Título y la Revista se quedan justo en medio, debajo del autor */
+  .articulo-detalles {
+    order: 2;
+    width: 100%;
+    margin-bottom: 20px; /* Espacio generoso antes de los botones */
+  }
+
+  /* 5. Los Botones se van abajo del todo y se centran en la pantalla */
+  .articulo-acciones {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px;
+    padding-bottom: 10px;   /* Margen interno para que no pegue con el borde inferior */
+  }
+
+  /* 6. Controlamos la imagen mini en el móvil */
+  .articulo-imagen {
+    width: 100%;
+    max-width: 120px; 
+    margin: 0 auto 15px auto;
+  }
+
+  /* 7. Botones más pequeños y compactos */
+  .btn-accion {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .btn-accion svg {
+    width: 14px;
+    height: 14px;
+  }
+
+}
+		</style>
+		
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Camilo</strong> Amaro García</a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Artículos de Revistas&nbsp;</h1>
+									</header>
+
+									<!-- Content -->
+			<div class="lista-articulos">
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic01.jpg" data-fancybox="articulos">
+        <img src="images/boletin18.jpg" alt="Portada artículo 1">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">AMARO GARCÍA, Camilo (1957)</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="navigator.clipboard.writeText(window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/articulos/articulo01.pdf'); alert('¡Enlace copiado!');">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/Amaro-Uno_mas_en_la_lista.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/Amaro-Uno_mas_en_la_lista.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            "Uno más en la lista de nuestros castillos: el de Huelma" ↗
+          </a>
+       <p></p>
+        <p>Boletín de la Asociación Española de Amigos de los Castillos,&nbsp;nº18 (Año V) (julio-septiembre): 84-89.</p>
+		  </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic02.jpg" data-fancybox="articulos">
+        <img src="images/pic02.jpg" alt="Portada artículo 2">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-02</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo02.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo02.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 2 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del segundo artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic03.jpg" data-fancybox="articulos">
+        <img src="images/pic03.jpg" alt="Portada artículo 3">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-03</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo03.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo03.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 3 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del tercer artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic04.jpg" data-fancybox="articulos">
+        <img src="images/pic04.jpg" alt="Portada artículo 4">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-04</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo04.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo04.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 4 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del cuarto artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic05.jpg" data-fancybox="articulos">
+        <img src="images/pic05.jpg" alt="Portada artículo 5">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-05</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo05.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo05.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 5 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del quinto artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic06.jpg" data-fancybox="articulos">
+        <img src="images/pic06.jpg" alt="Portada artículo 6">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-06</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo06.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo06.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 6 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del sexto artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic07.jpg" data-fancybox="articulos">
+        <img src="images/pic07.jpg" alt="Portada artículo 7">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-07</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo07.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo07.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 7 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del séptimo artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic08.jpg" data-fancybox="articulos">
+        <img src="images/pic08.jpg" alt="Portada artículo 8">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-08</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo08.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo08.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 8 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del octavo artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic09.jpg" data-fancybox="articulos">
+        <img src="images/pic09.jpg" alt="Portada artículo 9">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-09</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo09.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo09.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 9 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del noveno artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="articulo-card">
+    <div class="articulo-imagen">
+      <a href="images/pic10.jpg" data-fancybox="articulos">
+        <img src="images/pic10.jpg" alt="Portada artículo 10">
+      </a>
+    </div>
+    <div class="articulo-contenido">
+      <div class="articulo-cabecera">
+        <span class="articulo-referencia">Ref: ART-10</span>
+        <div class="articulo-acciones">
+          <button class="btn-accion" title="Compartir" onclick="alert('Enlace copiado al portapapeles')">
+            <svg viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+            Compartir
+          </button>
+          <a href="articulos/articulo10.pdf" download class="btn-accion" title="Descargar">
+            <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Descargar
+          </a>
+        </div>
+      </div>
+      <div class="articulo-detalles">
+        <h3>
+          <a href="articulos/articulo10.pdf" target="_blank" style="text-decoration: none; color: #2c5c7e;">
+            Título del Artículo 10 ↗
+          </a>
+        </h3>
+        <p>Descripción o reseña corta del décimo artículo. Puedes añadir aquí la fecha de publicación original o la revista.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+												<!-- Table -->
+													
+												<!-- Image -->
+													
+													<div class="box alt">
+														<div class="row gtr-50 gtr-uniform">
+															<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+															<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+															<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+															<!-- Break -->
+															<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+															<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+															<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+															<!-- Break -->
+															<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
+															<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
+															<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
+														</div>
+													</div>
+
+										</div>		
+						</div>
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Inicio</a></li>
+										<li><a href="articulos.html">Artículos</a></li>
+										<li><a href="album01.html">Album de Fotos</a></li>
+										<li>
+											<span class="opener">Submenú Album</span>
+											<ul>
+												<li><a href="#">Pagina 1</a></li>
+												<li><a href="#">Pagina 2</a></li>
+												<li><a href="#">Pagina 3</a></li>
+												<li><a href="#">Pagina 4</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Anécdotas</a></li>
+										<li><a href="#">Pinturas</a></li>
+										<li>
+											<span class="opener">Otro Submenu</span>
+											
+										</li>
+										
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Ante interdum</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+										<li class="icon solid fa-phone">(000) 000-0000</li>
+										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+										Nashville, TN 00000-0000</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

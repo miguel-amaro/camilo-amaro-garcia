@@ -1,0 +1,177 @@
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --accent:#e6b94a;
+  --text:#0b1220;
+  --muted:#58616a;
+  --gap:1rem;
+  --container-width:1100px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* Básico */
+*{box-sizing:border-box; margin:0; padding:0;}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text)}
+
+/* Contenedor */
+.container{width:92%;max-width:var(--container-width);margin:0 auto}
+
+/* Header */
+.site-header{padding:1.5rem 0;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent)}
+.logo{margin:0;font-size:1.6rem}
+.subtitle{margin:0;color:var(--muted);margin-top:.25rem}
+
+/* Paginador */
+.pager{display:flex;gap:.75rem;align-items:center;justify-content:center;margin:1rem 0}
+.page-link{color:var(--text);text-decoration:none;padding:.35rem .6rem;border-radius:6px;background:rgba(11,18,32,0.04)}
+.page-link:hover{background:rgba(230,185,74,0.12)}
+.current{padding:.35rem .6rem;color:var(--muted)}
+
+/* Galería: 3 columnas */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin:1rem 0 3rem}
+
+/* --- SOLUCIÓN: LA TARJETA CON TAMAÑO FIJO INTEGRAL --- */
+.card, figure {
+  display: flex !important;
+  flex-direction: column !important; /* Alinea la foto arriba y el texto abajo */
+  width: 100% !important;
+  height: 300px !important;           /* ALTO FIJO DE LA TARJETA (Cámbialo si la quieres más alta o baja) */
+  position: relative !important;
+  border-radius: 8px;
+  overflow: hidden !important;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(11,18,32,0.06);
+  cursor: zoom-in;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* LA IMAGEN: Ocupa todo el espacio que sobra arriba de forma inteligente */
+.card img, figure img {
+  display: block !important;
+  width: 100% !important;
+  flex-grow: 1 !important;          /* Fuerza a la foto a rellenar el espacio vacío */
+  height: 0 !important;             /* Truco flexbox para evitar que rompa el diseño */
+  object-fit: cover !important;     /* Recorta la foto proporcionalmente sin deformarla */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Modificadores opcionales (por si tus tarjetas HTML usan estas clases) 
+.card.vertical { height: 440px !important; }
+.card.horizontal { height: 320px !important; }
+*/
+
+/* LA LEYENDA: Se acopla abajo de la foto de forma natural ocupando su espacio */
+.card figcaption, figcaption {
+  position: relative !important;    /* Deja de flotar de forma descontrolada */
+  width: 100% !important;
+  margin: 0 !important;
+  padding: .6rem !important;        /* Margen interno para el texto */
+  background: #e6b94a !important;   /* El color dorado fijo de tu captura */
+  color: #000000 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+}
+
+/* Texto de la leyenda */
+.caption-text {
+  display: block !important;
+  font-weight: 600 !important;
+  color: #000000 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+font-size: 0.7rem !important;
+line-height: 1.1 !important;
+}
+
+/* Footer y Lightbox */
+.site-footer{text-align:center;color:var(--muted);padding:1.5rem 0;border-top:1px solid rgba(11,18,32,0.04)}
+.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,8,15,0.6);z-index:9999;padding:2rem}
+.lightbox-img{max-height:80vh;max-width:90vw;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.25)}
+.lightbox .close{position:absolute;right:1rem;top:1rem;background:transparent;color:var(--text);border:0;font-size:2rem;cursor:pointer}
+.lightbox-caption{color:var(--muted);margin-top:.75rem;text-align:center}
+
+/* Ajustes Responsive para Móviles */
+@media (max-width:900px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .card, figure { height: 340px !important; }
+}
+@media (max-width:600px){
+  .gallery{grid-template-columns:1fr}
+  .card, figure { height: 320px !important; }
+  .site-header{padding:1rem 0}
+}
+
+/* --- DISEÑO: PÁGINA EN CONSTRUCCIÓN --- */
+.en-construccion {
+  max-width: 500px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border: 2px solid rgba(11, 18, 32, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 18, 32, 0.08);
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+}
+
+/* La imagen de cabecera del aviso */
+.construccion-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Zona de texto */
+.construccion-info {
+  padding: 2rem 1.5rem;
+}
+
+.en-construccion h2 {
+  color: #0b1220;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.en-construccion p {
+  color: #58616a;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* Detalle visual: barra decorativa dorada que simula carga */
+.barra-progreso {
+  width: 60%;
+  height: 6px;
+  background: rgba(11, 18, 32, 0.05);
+  border-radius: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.barra-progreso div {
+  width: 45%;
+  height: 100%;
+  background: #e6b94a; /* Tu color dorado */
+  border-radius: 10px;
+}
+
+/* Ajuste rápido para móviles */
+@media (max-width: 600px) {
+  .en-construccion {
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+/* Fuerza a la imagen a adaptarse al recuadro sin cortarse */
+.en-construccion img, 
+.en-construccion-fondo img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: contain !important; /* Muestra la foto entera sin recortes */
+  flex-grow: 0 !important;        /* Anula el comportamiento de la galería */
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Camilo Amaro García (Web)</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Camilo Amaro García</strong> </a>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								
+							
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Álbum — Página 2</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header id="header" class="site-header">
+    <div class="container">
+      <h1 class="logo"><h1>Álbum de Fotos</h1>
+      <p class="subtitle">PÁGINA 1</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="pager top-pager">
+      <a class="page-link" href="index.html">Página 1</a>
+      <span class="current">Página 2</span>
+      <a class="page-link" href="index3.html">Página 3</a>
+    </nav>
+
+    <section class="gallery">
+      <!-- 9 fotos: usa /images/pic01.jpg ... pic09.jpg -->
+      <figure class="card horizontal">
+        <img src="images/pic01.jpg" alt="Pic 01">
+        <figcaption><span class="caption-text">Camilo Amaro García en su Farmacia en Huelma</span></figcaption>
+      </figure>
+
+      <figure class="card horizontal">
+        <img src="images/pic10.jpg" alt="Pic 02">
+        <figcaption><span class="caption-text">Camilo Amaro con sus seis hijos en 1945</span></figcaption>
+      </figure>
+
+      <figure class="card vertical">
+        <img src="/images/pic03.jpg" alt="Pic 03">
+        <figcaption><span class="caption-text">Texto vertical</span></figcaption>
+      </figure>
+
+      <figure class="card horizontal">
+        <img src="/images/pic04.jpg" alt="Pic 04">
+        <figcaption><span class="caption-text">Descripción 4</span></figcaption>
+      </figure>
+
+      <figure class="card horizontal promo">
+        <img src="/images/pic05.jpg" alt="Pic 05">
+        <figcaption><span class="caption-text">Descripción 5</span></figcaption>
+        <div class="promo-box">
+        </div>
+      </figure>
+
+      <figure class="card horizontal">
+        <img src="/images/pic06.jpg" alt="Pic 06">
+        <figcaption><span class="caption-text">Descripción 6</span></figcaption>
+      </figure>
+
+      <figure class="card horizontal">
+        <img src="/images/pic07.jpg" alt="Pic 07">
+        <figcaption><span class="caption-text">Descripción 7</span></figcaption>
+      </figure>
+
+      <figure class="card horizontal">
+        <img src="/images/pic08.jpg" alt="Pic 08">
+        <figcaption><span class="caption-text">Descripción 8</span></figcaption>
+      </figure>
+
+      <figure class="card vertical">
+        <img src="/images/pic09.jpg" alt="Pic 09">
+        <figcaption><span class="caption-text">Descripción 9</span></figcaption>
+      </figure>
+    </section>
+
+    <nav class="pager bottom-pager">
+      <a class="page-link" href="index.html">Página 1</a>
+      <span class="current">Página 2</span>
+      <a class="page-link" href="index3.html">Página 3</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 — Album de Fotos (Por Miguel Angel Amaro Soriano)</small>
+    </div>
+  </footer>
+
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="close" aria-label="Cerrar">&times;</button>
+    <img class="lightbox-img" src="" alt="">
+    <p class="lightbox-caption"></p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.card img').forEach(img => {
+      img.addEventListener('click', () => {
+        const lb = document.getElementById('lightbox');
+        lb.querySelector('.lightbox-img').src = img.src;
+        lb.querySelector('.lightbox-img').alt = img.alt;
+        lb.querySelector('.lightbox-caption').textContent = img.closest('figure').querySelector('.caption-text').textContent;
+        lb.style.display = 'flex';
+        lb.setAttribute('aria-hidden', 'false');
+      });
+    });
+    document.querySelector('#lightbox .close').addEventListener('click', () => {
+      const lb = document.getElementById('lightbox');
+      lb.style.display = 'none';
+      lb.setAttribute('aria-hidden', 'true');
+    });
+    document.getElementById('lightbox').addEventListener('click', e => {
+      if (e.target === e.currentTarget) {
+        e.currentTarget.style.display = 'none';
+        e.currentTarget.setAttribute('aria-hidden', 'true');
+      }
+    });
+  </script>
+
+							
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Inicio</a></li>
+										<li><a href="articulos.html">Artículos</a></li>
+										<li><a href="album01.html">Album de Fotos</a></li>
+										<li>
+											<span class="opener">Submenú Album</span>
+											<ul>
+												<li><a href="#">Pagina 1</a></li>
+												<li><a href="#">Pagina 2</a></li>
+												<li><a href="#">Pagina 3</a></li>
+												<li><a href="#">Pagina 4</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Anécdotas</a></li>
+										<li><a href="#">Pinturas</a></li>
+										<li>
+											<span class="opener">Otro Submenu</span>
+											
+										</li>
+										
+									</ul>
+								</nav>
+
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Novedades</h2>
+									</header>
+									<div class="mini-posts">
+										<article>
+											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<p>Ya se me ocurrá algo.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<p>Estoy en Construcción.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<p>Sigo en Construcción.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">Más</a></li>
+									</ul>
+								</section>
+
+							<!-- Section -->
+								<section>
+									<div class="bloque-centrado contacto">
+									<header class="major">
+										<h2>Consultas</h2>
+									</header>
+									<p><span class="caption-text">Si deseas realizar alguna consulta o detectas algún error de visualización en la página con tu navegador o dispositivo, te agradecería que te pusieras en contacto conmigo. Puedes hacerlo, preferiblemente, a través de la siguiente dirección de correo electrónico:</p></span>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#"><p>mangelamaro@hotmail.com</p></a></li>
+										<li class="icon solid fa-phone">644515611</li>
+										<li class="icon solid fa-home">18014 Granada (Spain)</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
