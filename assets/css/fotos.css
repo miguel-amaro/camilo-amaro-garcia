@@ -1,105 +1,192 @@
-:root{
-  --bg:#ffffff;
-  --card:#ffffff;
-  --accent:#e6b94a;
-  --text:#0b1220;
-  --muted:#58616a;
-  --gap:1rem;
-  --container-width:1100px;
+:root {
+  --bg: #ffffff;
+  --card: #ffffff;
+  --accent: #e6b94a;
+  --text: #0b1220;
+  --muted: #58616a;
+  --gap: 1rem;
+  --container-width: 1100px;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 }
 
 /* Básico */
-*{box-sizing:border-box; margin:0; padding:0;}
-html,body{height:100%;margin:0;background:var(--bg);color:var(--text)}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
 
 /* Contenedor */
-.container{width:92%;max-width:var(--container-width);margin:0 auto}
+.container {
+  width: 92%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
 
 /* Header */
-.site-header{padding:1.5rem 0;text-align:center;background:linear-gradient(180deg,rgba(0,0,0,0.03),transparent)}
-.logo{margin:0;font-size:1.6rem}
-.subtitle{margin:0;color:var(--muted);margin-top:.25rem}
+.site-header {
+  padding: 1.5rem 0;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.03), transparent);
+}
+.logo {
+  margin: 0;
+  font-size: 1.6rem;
+}
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  margin-top: .25rem;
+}
 
 /* Paginador */
-.pager{display:flex;gap:.75rem;align-items:center;justify-content:center;margin:1rem 0}
-.page-link{color:var(--text);text-decoration:none;padding:.35rem .6rem;border-radius:6px;background:rgba(11,18,32,0.04)}
-.page-link:hover{background:rgba(230,185,74,0.12)}
-.current{padding:.35rem .6rem;color:var(--muted)}
+.pager {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.page-link {
+  color: var(--text);
+  text-decoration: none;
+  padding: .35rem .6rem;
+  border-radius: 6px;
+  background: rgba(11,18,32,0.04);
+}
+.page-link:hover {
+  background: rgba(230,185,74,0.12);
+}
+.current {
+  padding: .35rem .6rem;
+  color: var(--muted);
+}
 
 /* Galería: 3 columnas */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);margin:1rem 0 3rem}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+  margin: 1rem 0 3rem;
+}
 
-/* --- SOLUCIÓN: LA TARJETA CON TAMAÑO FIJO INTEGRAL --- */
-.card, figure {
+/* --- SOLUCIÓN: TARJETA ELÁSTICA DINÁMICA --- */
+
+.gallery .card, 
+.card, 
+figure {
   display: flex !important;
-  flex-direction: column !important; /* Alinea la foto arriba y el texto abajo */
+  flex-direction: column !important; /* Alinea foto arriba y texto abajo */
   width: 100% !important;
-  height: 300px !important;           /* ALTO FIJO DE LA TARJETA (Cámbialo si la quieres más alta o baja) */
+  height: 340px !important; /* Alto base de la tarjeta. Puedes subirlo o bajarlo a tu gusto */
   position: relative !important;
   border-radius: 8px;
   overflow: hidden !important;
   background: #ffffff;
   box-shadow: 0 8px 20px rgba(11,18,32,0.06);
-  cursor: zoom-in;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* LA IMAGEN: Ocupa todo el espacio que sobra arriba de forma inteligente */
-.card img, figure img {
+/* El enlace de Fancybox: se vuelve elástico y ocupa el espacio libre superior */
+.gallery .card a,
+.card a {
   display: block !important;
   width: 100% !important;
-  flex-grow: 1 !important;          /* Fuerza a la foto a rellenar el espacio vacío */
-  height: 0 !important;             /* Truco flexbox para evitar que rompa el diseño */
-  object-fit: cover !important;     /* Recorta la foto proporcionalmente sin deformarla */
+  flex-grow: 1 !important; /* Fuerza al contenedor de la foto a estirarse ocupando lo que el texto deje libre */
+  height: 0 !important;    /* Truco para que el navegador calcule el alto elástico correctamente */
+  text-decoration: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Modificadores opcionales (por si tus tarjetas HTML usan estas clases) 
-.card.vertical { height: 440px !important; }
-.card.horizontal { height: 320px !important; }
-*/
-
-/* LA LEYENDA: Se acopla abajo de la foto de forma natural ocupando su espacio */
-.card figcaption, figcaption {
-  position: relative !important;    /* Deja de flotar de forma descontrolada */
+/* La imagen: se adapta al 100% del enlace elástico */
+/* REEMPLÁZALO POR ESTO */
+.gallery .card a img,
+.card img, 
+figure img {
+  display: block !important;
   width: 100% !important;
+  height: 100% !important; 
+  object-fit: cover !important;     /* Sigue rellenando la caja de forma elástica */
+  object-position: top center !important; /* ← ¡ESTA ES LA LÍNEA MÁGICA! Alinea la foto arriba del todo */
   margin: 0 !important;
-  padding: .6rem !important;        /* Margen interno para el texto */
-  background: #e6b94a !important;   /* El color dorado fijo de tu captura */
+  padding: 0 !important;
+}
+
+/* La leyenda: su altura es automática según las líneas de texto que tenga */
+.gallery .card figcaption,
+.card figcaption, 
+figcaption {
+  display: block !important;
+  position: relative !important; 
+  width: 100% !important;
+  height: auto !important; /* ¡ALTO AUTOMÁTICO! Crece o encoge según el texto */
+  margin: 0 !important;
+  padding: .6rem !important;
+  background: #e6b94a !important; /* El color dorado fijo */
   color: #000000 !important;
   line-height: 1.2 !important;
   text-align: center !important;
+  box-sizing: border-box !important;
 }
 
 /* Texto de la leyenda */
+.gallery .card figcaption .caption-text,
 .caption-text {
   display: block !important;
   font-weight: 600 !important;
   color: #000000 !important;
   margin: 0 !important;
   padding: 0 !important;
-font-size: 0.7rem !important;
-line-height: 1.1 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
 }
 
 /* Footer y Lightbox */
-.site-footer{text-align:center;color:var(--muted);padding:1.5rem 0;border-top:1px solid rgba(11,18,32,0.04)}
-.lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,8,15,0.6);z-index:9999;padding:2rem}
-.lightbox-img{max-height:80vh;max-width:90vw;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.25)}
-.lightbox .close{position:absolute;right:1rem;top:1rem;background:transparent;color:var(--text);border:0;font-size:2rem;cursor:pointer}
-.lightbox-caption{color:var(--muted);margin-top:.75rem;text-align:center}
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(11,18,32,0.04);
+}
+
+/* Bloqueo visual por CSS del visor antiguo (Poptrox) */
+.poptrox-popup, 
+#poptrox-popup,
+div[class*="poptrox"],
+div[id*="poptrox"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
 
 /* Ajustes Responsive para Móviles */
-@media (max-width:900px){
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .card, figure { height: 340px !important; }
-}
-@media (max-width:600px){
-  .gallery{grid-template-columns:1fr}
-  .card, figure { height: 320px !important; }
-  .site-header{padding:1rem 0}
+@media (max-width:900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery .card, .card, figure { 
+    height: 340px !important; 
+  }
 }
 
+@media (max-width:600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery .card, .card, figure { 
+    height: 320px !important; 
+  }
+  .site-header {
+    padding: 1rem 0;
+  }
+}

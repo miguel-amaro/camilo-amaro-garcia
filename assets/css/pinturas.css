@@ -138,3 +138,18 @@
 .boton-cerrar:hover {
   color: #bbb;
 }
+
+/* --- PERMITIR QUE EL VISOR DE IMÁGENES SE PONGA POR ENCIMA --- */
+.image {
+    position: relative;
+    display: inline-block;
+}
+
+/* Si el script activa el modo pantalla completa, anulamos temporalmente el bloqueo de la tarjeta */
+body.lg-on .card, 
+body.lg-on figure,
+.lg-outer, 
+.lg-backdrop {
+    pointer-events: auto !important;
+    z-index: 999999 !important;
+}

@@ -10,7 +10,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
+
+		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+<link rel="stylesheet" href="assets/css/fotos.css" />
+				</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -58,55 +63,72 @@
       <a class="page-link" href="index3.html">Página 3</a>
     </nav>
 
-    <section class="gallery">
-      <!-- 9 fotos: usa /images/pic01.jpg ... pic09.jpg -->
-      <figure class="card horizontal">
-        <img src="images/pic01.jpg" alt="Pic 01">
-        <figcaption><span class="caption-text">Camilo Amaro García en su Farmacia en Huelma</span></figcaption>
-      </figure>
+   <section class="gallery">
+  <figure class="card horizontal">
+    <a href="images/pic01.jpg" data-fancybox="galeria">
+      <img src="images/pic01.jpg" alt="Camilo Amaro García en su Farmacia en Huelma">
+    </a>
+    <figcaption><span class="caption-text">Camilo Amaro García en su Farmacia en Huelma o puede ser en Carchelejo</span></figcaption>
+  </figure>
 
-      <figure class="card horizontal">
-        <img src="images/pic10.jpg" alt="Pic 02">
-        <figcaption><span class="caption-text">Camilo Amaro con sus seis hijos en 1945</span></figcaption>
-      </figure>
+  <figure class="card horizontal">
+    <a href="images/pic10.jpg" data-fancybox="galeria">
+      <img src="images/pic10.jpg" alt="Camilo Amaro con sus seis hijos en 1945">
+    </a>
+    <figcaption><span class="caption-text">Camilo Amaro con sus seis hijos en 1945</span></figcaption>
+  </figure>
 
-      <figure class="card vertical">
-        <img src="/images/pic03.jpg" alt="Pic 03">
-        <figcaption><span class="caption-text">Texto vertical</span></figcaption>
-      </figure>
+  <figure class="card vertical">
+    <a href="images/pic03.jpg" data-fancybox="galeria">
+      <img src="images/pic03.jpg" alt="Texto vertical">
+    </a>
+    <figcaption><span class="caption-text">Texto vertical</span></figcaption>
+  </figure>
 
-      <figure class="card horizontal">
-        <img src="/images/pic04.jpg" alt="Pic 04">
-        <figcaption><span class="caption-text">Descripción 4</span></figcaption>
-      </figure>
+  <figure class="card horizontal">
+    <a href="images/pic04.jpg" data-fancybox="galeria">
+      <img src="images/pic04.jpg" alt="Descripción 4">
+    </a>
+    <figcaption><span class="caption-text">Descripción 4</span></figcaption>
+  </figure>
 
-      <figure class="card horizontal promo">
-        <img src="/images/pic05.jpg" alt="Pic 05">
-        <figcaption><span class="caption-text">Descripción 5</span></figcaption>
-        <div class="promo-box">
-        </div>
-      </figure>
+  <figure class="card horizontal promo">
+    <a href="images/pic05.jpg" data-fancybox="galeria">
+      <img src="images/pic05.jpg" alt="Descripción 5">
+    </a>
+    <figcaption><span class="caption-text">Descripción 5</span></figcaption>
+    <div class="promo-box"></div>
+  </figure>
 
-      <figure class="card horizontal">
-        <img src="/images/pic06.jpg" alt="Pic 06">
-        <figcaption><span class="caption-text">Descripción 6</span></figcaption>
-      </figure>
+  <figure class="card horizontal">
+    <a href="images/pic06.jpg" data-fancybox="galeria">
+      <img src="images/pic06.jpg" alt="Descripción 6">
+    </a>
+    <figcaption><span class="caption-text">Descripción 6</span></figcaption>
+  </figure>
 
-      <figure class="card horizontal">
-        <img src="/images/pic07.jpg" alt="Pic 07">
-        <figcaption><span class="caption-text">Descripción 7</span></figcaption>
-      </figure>
+  <figure class="card horizontal">
+    <a href="images/pic07.jpg" data-fancybox="galeria">
+      <img src="images/pic07.jpg" alt="Descripción 7">
+    </a>
+    <figcaption><span class="caption-text">Descripción 7</span></figcaption>
+  </figure>
 
-      <figure class="card horizontal">
-        <img src="/images/pic08.jpg" alt="Pic 08">
-        <figcaption><span class="caption-text">Descripción 8</span></figcaption>
-      </figure>
+  <figure class="card horizontal">
+    <a href="images/pic08.jpg" data-fancybox="galeria">
+      <img src="images/pic08.jpg" alt="Descripción 8">
+    </a>
+    <figcaption><span class="caption-text">Descripción 8</span></figcaption>
+  </figure>
 
-      <figure class="card vertical">
-        <img src="/images/pic09.jpg" alt="Pic 09">
-        <figcaption><span class="caption-text">Descripción 9</span></figcaption>
-      </figure>
-    </section>
+  <figure class="card vertical">
+    <a href="images/pic09.jpg" data-fancybox="galeria">
+      <img src="images/pic09.jpg" alt="Descripción 9">
+    </a>
+    <figcaption><span class="caption-text">Descripción 9</span></figcaption>
+  </figure>
+</section>
+
 
     <nav class="pager bottom-pager">
       <a class="page-link" href="index.html">Página 1</a>
@@ -250,6 +272,18 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+    // 1. Rompemos los eventos del script viejo para que deje libres las fotos de la galería
+    if (typeof jQuery !== 'undefined') {
+      jQuery('.gallery, .gallery a, .card a').off('click');
+    }
+
+    // 2. Activamos Fancybox limpio y sin interferencias
+    Fancybox.bind("[data-fancybox]", {
+      images: { Panzoom: { maxScale: 3 } }
+    });
+  </script>
 
 	</body>
 </html>
