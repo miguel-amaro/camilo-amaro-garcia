@@ -1,0 +1,179 @@
+
+		/* Contenedor de la lista */
+.lista-articulos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre un artículo y otro */
+  padding: 10px;
+}
+
+/* La tarjeta del artículo (Efecto tabla con bordes y sombra) */
+.articulo-card {
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+/* Pequeño efecto al pasar el ratón por encima */
+.articulo-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Columna de la imagen */
+.articulo-imagen {
+  flex: 0 0 200px; /* Ancho fijo para la imagen de la izquierda (ajustable) */
+  max-width: 200px;
+  background: #fcfcfc;
+}
+
+.articulo-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Hace que la foto se adapte al recuadro sin deformarse */
+  display: block;
+}
+
+/* Columna del contenido */
+.articulo-contenido {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Fila superior derecha (Referencia + Botones) */
+.articulo-cabecera {
+  display: flex;
+  justify-content: space-between; /* Manda la referencia a la izquierda y botones a la derecha */
+  align-items: center;
+  border-bottom: 1px dashed #eef0f2; /* Línea divisoria fina */
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Texto de la referencia */
+.articulo-referencia {
+  font-weight: bold;
+  color: #555555;
+  font-family: monospace; /* Estilo tipo código/archivo */
+  font-size: 1.1rem;
+}
+
+/* Contenedor de botones */
+.articulo-acciones {
+  display: flex;
+  gap: 8px;
+}
+
+/* Estilo unificado para ambos botones (Diseño rojo/coral suave) */
+.btn-accion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* Espacio entre el icono y el texto */
+  
+  /* Relleno ajustado: compacto arriba/abajo (3px) y más a los lados (12px) */
+  padding: 3px 12px; 
+  
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  
+  /* Forzar minúsculas con la primera letra en Mayúscula */
+  text-transform: capitalize; 
+  
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  
+  /* FONDO: Rojo claro / Coral suave */
+  background: #fbeae9; 
+  /* TEXTO E ICONO: Rojo oscuro / Granate elegante */
+  color: #a63a32; 
+  
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Efecto al pasar el ratón por encima (se oscurece el fondo un poco) */
+.btn-accion:hover {
+  background: #f7d4d1;
+  color: #822b24;
+}
+
+/* Tamaño de los iconos SVG dentro del botón */
+.btn-accion svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor; /* Copia el color del texto automáticamente (rojo oscuro) */
+  display: block;
+}
+
+/* Puedes ponerlo aquí, al final de la zona normal: */
+.articulo-referencia {
+  font-family: "Arial Narrow"; 
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+
+  /* 1. La tarjeta pasa a ser una columna vertical pura */
+  .articulo-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. El truco maestro: disolvemos la cabecera en el móvil para poder mover sus piezas */
+  .articulo-cabecera {
+    display: contents; 
+  }
+
+  /* 3. El Autor (referencia) se queda arriba del todo */
+  .articulo-referencia {
+    order: 1;
+    display: block;
+    width: 100%;
+    margin-bottom: 8px; /* Separación pequeña antes del título */
+    text-align: left;   /* Alineado a la izquierda como en una bibliografía */
+  }
+
+  /* 4. El Título y la Revista se quedan justo en medio, debajo del autor */
+  .articulo-detalles {
+    order: 2;
+    width: 100%;
+    margin-bottom: 20px; /* Espacio generoso antes de los botones */
+  }
+
+  /* 5. Los Botones se van abajo del todo y se centran en la pantalla */
+  .articulo-acciones {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px;
+    padding-bottom: 10px;   /* Margen interno para que no pegue con el borde inferior */
+  }
+
+  /* 6. Controlamos la imagen mini en el móvil */
+  .articulo-imagen {
+    width: 100%;
+    max-width: 120px; 
+    margin: 0 auto 15px auto;
+  }
+
+  /* 7. Botones más pequeños y compactos */
+  .btn-accion {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .btn-accion svg {
+    width: 14px;
+    height: 14px;
+  }
+
+}

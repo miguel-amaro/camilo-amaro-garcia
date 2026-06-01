@@ -1,0 +1,140 @@
+	/* Contenedor general */
+.seccion-album {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: sans-serif; /* O la fuente que uses en tu web */
+}
+
+.seccion-album h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.seccion-album .introduccion {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* La cuadrícula que organiza los recuadros en filas y columnas */
+.cuadrilla-pinturas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  grid-auto-flow: dense;
+  
+  /* ESTA ES LA LÍNEA CLAVE: Evita que las tarjetas se estiren hacia abajo */
+  align-items: start; 
+}
+			
+/* ========================================================
+   RECUADROS CON RELIEVE Y SOMBRAS DESTACADAS
+   ======================================================== */
+
+.tarjeta-pintura {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 
+              0 4px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-pintura:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18), 
+              0 6px 10px rgba(0, 0, 0, 0.08);
+}
+
+.marco-foto {
+  width: 100%;
+  height: auto; /* Dejamos que el marco se adapte libremente */
+  background-color: #f8fafc; /* El fondo limpio que ya tenías */
+  display: block;
+}
+
+.marco-foto img {
+  width: auto;          /* <--- IMPORTANTE: Cambia 100% por auto para que no se obligue a ensanchar */
+  max-width: 100%;      /* Evita que si una foto es gigante se salga de la tarjeta */
+  max-height: 350px;    /* <--- El freno: Ajusta este número (240px, 260px...) hasta ver el tamaño ideal */
+  display: block;
+  margin: 0 auto;       /* Centra el cuadro horizontalmente si es más estrecho que la tarjeta */
+  object-fit: contain;  /* Mantiene la proporción real del lienzo sin deformarlo */
+}
+.leyenda {
+  padding: 16px;
+  text-align: left;
+  background-color: #fdfbf7;
+  border-top: 1px solid #f1f5f9;
+}
+
+.leyenda h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.2rem;
+  color: #1e293b;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.leyenda p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.leyenda .tecnica {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a16207;
+  font-weight: 600;
+}
+			
+/* La capa negra de fondo que cubre toda la pantalla (oculta por defecto) */
+.capa-lightbox {
+  display: none; /* Escondido */
+  position: fixed;
+  z-index: 9999; /* Por encima de todo lo demás */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo negro transparente */
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cuando el ID de la URL coincide con el de la capa, se activa y se muestra */
+.capa-lightbox:target {
+  display: flex;
+}
+
+/* La foto ampliada dentro de la pantalla completa */
+.foto-ampliada {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain; /* No se deforma ni se corta */
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+  border: 4px solid #fff;
+}
+
+/* El botón de cerrar (la X de la esquina) */
+.boton-cerrar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.boton-cerrar:hover {
+  color: #bbb;
+}

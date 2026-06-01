@@ -2347,3 +2347,84 @@ h2 {
   margin-top: -5px;     /* Truco técnico: margen negativo por si quieres pegarlo aún más al H2 */
   margin-bottom: 2px;
 }
+
+/* ==========================================================================
+   SECCIÓN TEMPORAL: PÁGINA EN CONSTRUCCIÓN (INICIO)
+   ========================================================================== */
+
+.en-construccion {
+  max-width: 500px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border: 2px solid rgba(11, 18, 32, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11, 18, 32, 0.08);
+  font-family: system-ui, -apple-system, sans-serif;
+  text-align: center;
+}
+
+/* La imagen de cabecera del aviso */
+.construccion-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+/* Zona de texto */
+.construccion-info {
+  padding: 2rem 1.5rem;
+}
+
+.en-construccion h2 {
+  color: #0b1220;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.en-construccion p {
+  color: #58616a;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+/* Detalle visual: barra decorativa dorada que simula carga */
+.barra-progreso {
+  width: 60%;
+  height: 6px;
+  background: rgba(11, 18, 32, 0.05);
+  border-radius: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.barra-progreso div {
+  width: 45%;
+  height: 100%;
+  background: #e6b94a; /* Tu color dorado */
+  border-radius: 10px;
+}
+
+/* Ajuste rápido para móviles */
+@media (max-width: 600px) {
+  .en-construccion {
+    max-width: 90%;
+    margin: 1.5rem auto;
+  }
+}
+/* Fuerza a la imagen a adaptarse al recuadro sin cortarse */
+.en-construccion img, 
+.en-construccion-fondo img {
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: contain !important; /* Muestra la foto entera sin recortes */
+  flex-grow: 0 !important;        /* Anula el comportamiento de la galería */
+}
+
+
+/* ==========================================================================
+   SECCIÓN TEMPORAL: PÁGINA EN CONSTRUCCIÓN (FINAL)
+   ========================================================================== */
