@@ -2324,29 +2324,6 @@ body.is-sidebar-visible #sidebar {
     }
 }
 
-/* ========================================================
-   CONTROL DE ESPACIOS EN ENCABEZADOS (H1, H2, H3)
-   ======================================================== */
-
-/* El nombre de tu abuelo (asumiendo que es el H1 principal de la web) */
-h1 {
-  margin-top: -20px;    /* Espacio por arriba pequeño */
-  margin-bottom: -10px;   /* ¡CLAVE! Reducimos el espacio de abajo casi a cero */
-  line-height: 1.2;     /* Interlineado más compacto */
-}
-
-/* El título del Álbum de Pinturas (asumiendo que es un H2) */
-h2 {
-  margin-top: -30px;    /* ¡CLAVE! Pegamos el título hacia arriba, quitando el vacío */
-  margin-bottom: -10px;  /* Espacio libre antes de que empiece la cuadrícula de cuadros */
-  line-height: 1.2;
-}
-
-/* Por si usas párrafos de introducción cortos justo debajo del título */
-.introduccion {
-  margin-top: -5px;     /* Truco técnico: margen negativo por si quieres pegarlo aún más al H2 */
-  margin-bottom: 2px;
-}
 
 /* ==========================================================================
    SECCIÓN TEMPORAL: PÁGINA EN CONSTRUCCIÓN (INICIO)

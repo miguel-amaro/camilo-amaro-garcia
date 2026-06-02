@@ -191,15 +191,22 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-  Fancybox.bind("[data-fancybox]", {
-    images: { Panzoom: { maxScale: 3 } } // Permite ampliar la foto hasta 3 veces su tamaño real en PC
-  });
-</script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            
+            <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+            
+            <script>
+              Fancybox.bind("[data-fancybox]", {
+                Images: {
+                  Panzoom: {
+                    maxScale: 8
+                  }
+                }
+              });
+            </script>
 
-	</body>
+    </body>
 </html>

@@ -190,3 +190,8 @@ div[id*="poptrox"] {
     padding: 1rem 0;
   }
 }
+
+/* Ocultar el botón de cierre viejo de la plantilla que se queda suelto */
+.fancybox-close-small, .fancybox-button--close {
+    display: none !important;
+}

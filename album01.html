@@ -10,11 +10,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/fotos.css" />
 
 		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
 
-<link rel="stylesheet" href="assets/css/fotos.css" />
+
 				</head>
 	<body class="is-preload">
 
@@ -143,35 +144,7 @@
     </div>
   </footer>
 
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="close" aria-label="Cerrar">&times;</button>
-    <img class="lightbox-img" src="" alt="">
-    <p class="lightbox-caption"></p>
-  </div>
-
-  <script>
-    document.querySelectorAll('.card img').forEach(img => {
-      img.addEventListener('click', () => {
-        const lb = document.getElementById('lightbox');
-        lb.querySelector('.lightbox-img').src = img.src;
-        lb.querySelector('.lightbox-img').alt = img.alt;
-        lb.querySelector('.lightbox-caption').textContent = img.closest('figure').querySelector('.caption-text').textContent;
-        lb.style.display = 'flex';
-        lb.setAttribute('aria-hidden', 'false');
-      });
-    });
-    document.querySelector('#lightbox .close').addEventListener('click', () => {
-      const lb = document.getElementById('lightbox');
-      lb.style.display = 'none';
-      lb.setAttribute('aria-hidden', 'true');
-    });
-    document.getElementById('lightbox').addEventListener('click', e => {
-      if (e.target === e.currentTarget) {
-        e.currentTarget.style.display = 'none';
-        e.currentTarget.setAttribute('aria-hidden', 'true');
-      }
-    });
-  </script>
+ 
 
 							
 
@@ -267,23 +240,31 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-			<script>
-    // 1. Rompemos los eventos del script viejo para que deje libres las fotos de la galería
-    if (typeof jQuery !== 'undefined') {
-      jQuery('.gallery, .gallery a, .card a').off('click');
-    }
 
-    // 2. Activamos Fancybox limpio y sin interferencias
-    Fancybox.bind("[data-fancybox]", {
-      images: { Panzoom: { maxScale: 3 } }
-    });
-  </script>
+<script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            
+            <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+            
+            <script>
+              Fancybox.bind("[data-fancybox]", {
+                Images: {
+                  Panzoom: {
+                    maxScale: 8
+                  }
+                }
+              });
+            </script>
 
-	</body>
+    </body>
 </html>
+
+
+
+
+
+
+		

@@ -51,8 +51,11 @@
 .marco-foto {
   width: 100%;
   height: auto; /* Dejamos que el marco se adapte libremente */
-  background-color: #f8fafc; /* El fondo limpio que ya tenías */
+  background-color: #efdfc6; /* El fondo limpio que ya tenías */
   display: block;
+  padding: 15px; /* ESTA LÍNEA HACE LA MAGIA: 15px arriba/abajo y 15px a los lados */
+  /* Evita que el colchón sume tamaño extra a la tarjeta */
+  box-sizing: border-box;
 }
 
 .marco-foto img {
@@ -64,10 +67,10 @@
   object-fit: contain;  /* Mantiene la proporción real del lienzo sin deformarlo */
 }
 .leyenda {
-  padding: 16px;
-  text-align: left;
+  padding: 5px;
+  text-align: center;
   background-color: #fdfbf7;
-  border-top: 1px solid #f1f5f9;
+  border-top: 0px solid #f1f5f9;
 }
 
 .leyenda h3 {
@@ -94,46 +97,7 @@
   font-weight: 600;
 }
 			
-/* La capa negra de fondo que cubre toda la pantalla (oculta por defecto) */
-.capa-lightbox {
-  display: none; /* Escondido */
-  position: fixed;
-  z-index: 9999; /* Por encima de todo lo demás */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9); /* Fondo negro transparente */
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
 
-/* Cuando el ID de la URL coincide con el de la capa, se activa y se muestra */
-.capa-lightbox:target {
-  display: flex;
-}
-
-/* La foto ampliada dentro de la pantalla completa */
-.foto-ampliada {
-  max-width: 90%;
-  max-height: 85vh;
-  object-fit: contain; /* No se deforma ni se corta */
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  border: 4px solid #fff;
-}
-
-/* El botón de cerrar (la X de la esquina) */
-.boton-cerrar {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
 
 .boton-cerrar:hover {
   color: #bbb;
@@ -152,4 +116,29 @@ body.lg-on figure,
 .lg-backdrop {
     pointer-events: auto !important;
     z-index: 999999 !important;
+}
+
+
+/* ========================================================
+   CONTROL DE ESPACIOS EN ENCABEZADOS (H1, H2, H3)
+   ======================================================== */
+
+/* El nombre de tu abuelo (asumiendo que es el H1 principal de la web) */
+h1 {
+  margin-top: -20px;    /* Espacio por arriba pequeño */
+  margin-bottom: -10px;   /* ¡CLAVE! Reducimos el espacio de abajo casi a cero */
+  line-height: 1.2;     /* Interlineado más compacto */
+}
+
+/* El título del Álbum de Pinturas (asumiendo que es un H2) */
+h2 {
+  margin-top: -30px;    /* ¡CLAVE! Pegamos el título hacia arriba, quitando el vacío */
+  margin-bottom: -10px;  /* Espacio libre antes de que empiece la cuadrícula de cuadros */
+  line-height: 1.2;
+}
+
+/* Por si usas párrafos de introducción cortos justo debajo del título */
+.introduccion {
+  margin-top: -5px;     /* Truco técnico: margen negativo por si quieres pegarlo aún más al H2 */
+  margin-bottom: 2px;
 }
