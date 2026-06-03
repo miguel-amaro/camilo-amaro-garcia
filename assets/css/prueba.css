@@ -1,15 +1,70 @@
-:root{
-  --bg:#ffffff;
-  --card:#ffffff;
-  --accent:#e6b94a;
-  --text:#0b1220;
-  --muted:#58616a;
-  --gap:1rem;
-  --container-width:1100px;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
 
-  body {
-    color:aqua;
-    background:#58616a;
+
+@charset "UTF-8";
+
+/* 1. Estructura del bloque */
+.contenedor-indicador {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 2. El bloque de la flecha con prioridad máxima, pero sin romper la animación */
+.bloque-flecha-animado {
+  display: inline-block !important;
+  position: relative !important;
+  line-height: 0;
+  /* Llamamos a la animación de forma normal */
+  animation: moverCajaFlecha 1.2s infinite ease-in-out alternate !important;
+}
+
+/* 3. El texto */
+.texto-indicado {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #333333;
+}
+
+/* 4. LA ANIMACIÓN CORRECTA: ¡NUNCA DEBE LLEVAR !IMPORTANT AQUÍ ADENTRO! */
+@keyframes moverCajaFlecha {
+  0% { 
+    transform: translateX(0); 
   }
+  100% { 
+    transform: translateX(12px); /* Mueve la caja de la flecha de forma nativa */
+  }
+}
+
+/* El texto que va después */
+.texto-indicado {
+  font-family: sans-serif;
+  font-size: 18px;
+
+}
+.bloque-flecha-animado {
+  display: inline-block !important;
+  position: relative !important;
+  line-height: 0;
+  animation: moverCajaFlecha 1.2s infinite ease-in-out alternate !important;
+
+  /* Estilos del recuadro anaranjado */
+  border: 1.5px solid #ff6b6b; /* Línea fina anaranjada */
+  padding: 6px;                /* Espacio interior */
+  border-radius: 6px;          /* Esquinas suavizadas */
+  background-color: #fffaf5;   /* Fondo blanco roto con un toque naranja muy sutil */
+}
+
+/* Configuración de tu nueva flecha SVG */
+.flecha-vectorial {
+  width: 24px;       /* 📐 Cambia el tamaño de la flecha al instante aquí */
+  height: 24px;
+  display: block;
   
+  /* 🎨 AQUÍ PRUEBAS LOS COLORES EN 1 SEGUNDO: */
+  color: #3b82f6;    /* Pon #ff793f para naranja, #2ed573 para verde, etc. */
+}
+
+/* Al pasar el ratón por el texto o la flecha, el color cambia solo */
+.contenedor-indicador:hover .flecha-vectorial {
+  color: #ff5252;    /* Color de contraste cuando el usuario pasa el ratón */
+}

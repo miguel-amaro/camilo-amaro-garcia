@@ -14,6 +14,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/prueba.css" />
+  
+ 
 		
 		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
@@ -23,6 +25,28 @@
     <li class="container"></li>
     hola soy yo esto es una prueba
     sigo probando hasta que me canse
+
+	<div class="caja-hover">
+  <h3>Mi Caja</h3>
+  <p>Pasa el ratón por encima para ver el efecto.</p>
+</div>
+
+<div class="contenedor-indicador">
+	<span class="bloque-flecha-animado">
+  <img src="boton/flecha-correcta.png" alt="Flecha" style="width: 24px; height: auto; display: block;">
+  </span>
+  <p class="texto-indicado">¡Si esto se mueve, el problema es el enlace del CSS!</p>
+</div>
+
+<div class="contenedor-indicador">
+  <span class="bloque-flecha-animado">
+    <!-- El SVG se dibuja directamente aquí. El fill="currentColor" es la clave -->
+ <svg class="flecha-vectorial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 12h14M13 6l6 6-6 6M2 9v6M9 9v6"/>
+</svg>
+  </span>
+  <p class="texto-indicado">¡Tu texto aquí!</p>
+</div>
     
     </body>
 

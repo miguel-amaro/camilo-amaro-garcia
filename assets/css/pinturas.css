@@ -1,9 +1,11 @@
-	/* Contenedor general */
+	/* ========================================================
+   CONTENEDOR GENERAL
+   ======================================================== */
 .seccion-album {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
-  font-family: sans-serif; /* O la fuente que uses en tu web */
+  font-family: sans-serif;
 }
 
 .seccion-album h2 {
@@ -17,21 +19,18 @@
   margin-bottom: 30px;
 }
 
-/* La cuadrícula que organiza los recuadros en filas y columnas */
-.cuadrilla-pinturas {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 25px;
-  grid-auto-flow: dense;
-  
-  /* ESTA ES LA LÍNEA CLAVE: Evita que las tarjetas se estiren hacia abajo */
-  align-items: start; 
-}
-			
 /* ========================================================
-   RECUADROS CON RELIEVE Y SOMBRAS DESTACADAS
+   ESTRUCTURA DE FILAS 3-2-3-2 (FLEXBOX)
    ======================================================== */
+.cuadrilla-pinturas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* El espacio de 25px que ya tenías */
+  margin: 20px 0;
+  align-items: start;
+}
 
+/* Base común para todas las tarjetas (Mantiene tus sombras y relieves) */
 .tarjeta-pintura {
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
@@ -40,6 +39,9 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 
               0 4px 6px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .tarjeta-pintura:hover {
@@ -48,29 +50,45 @@
               0 6px 10px rgba(0, 0, 0, 0.08);
 }
 
+/* FILAS DE 3: Forzamos a que ocupen un tercio del ancho disponible */
+.tarjeta-vertical {
+  flex: 1 1 calc(33.333% - 25px);
+  min-width: 280px; /* Tamaño mínimo para que no se rompa en móviles */
+}
+
+/* FILAS DE 2: Forzamos a que ocupen la mitad del ancho (se ven más grandes) */
+.tarjeta-horizontal {
+  flex: 1 1 calc(50% - 25px);
+  min-width: 350px;
+}
+
+/* ========================================================
+   MARCOS DE FOTOS Y LEYENDAS (Tus estilos originales)
+   ======================================================== */
 .marco-foto {
   width: 100%;
-  height: auto; /* Dejamos que el marco se adapte libremente */
-  background-color: #efdfc6; /* El fondo limpio que ya tenías */
+  height: auto;
+  background-color: #efdfc6; /* Fondo limpio beige */
   display: block;
-  padding: 15px; /* ESTA LÍNEA HACE LA MAGIA: 15px arriba/abajo y 15px a los lados */
-  /* Evita que el colchón sume tamaño extra a la tarjeta */
+  padding: 15px;
   box-sizing: border-box;
 }
 
 .marco-foto img {
-  width: auto;          /* <--- IMPORTANTE: Cambia 100% por auto para que no se obligue a ensanchar */
-  max-width: 100%;      /* Evita que si una foto es gigante se salga de la tarjeta */
-  max-height: 350px;    /* <--- El freno: Ajusta este número (240px, 260px...) hasta ver el tamaño ideal */
+  width: auto;          
+  max-width: 100%;      
+  max-height: 350px;    /* El freno para que no se desmadren */
   display: block;
-  margin: 0 auto;       /* Centra el cuadro horizontalmente si es más estrecho que la tarjeta */
-  object-fit: contain;  /* Mantiene la proporción real del lienzo sin deformarlo */
+  margin: 0 auto;       
+  object-fit: contain;  
 }
+
 .leyenda {
-  padding: 5px;
+  padding: 15px 5px; /* Un poco más de margen vertical para equilibrar */
   text-align: center;
   background-color: #fdfbf7;
   border-top: 0px solid #f1f5f9;
+  margin-top: auto; /* Empuja la leyenda abajo si las imágenes varían en altura */
 }
 
 .leyenda h3 {
@@ -96,49 +114,78 @@
   color: #a16207;
   font-weight: 600;
 }
-			
 
-
-.boton-cerrar:hover {
-  color: #bbb;
+/* ========================================================
+   BOTONES DE PAGINACIÓN (CENTRADOS)
+   ======================================================== */
+.top-pager, .bottom-pager {
+  display: flex;
+  justify-content: center; /* Centrado absoluto horizontal */
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0;
+  width: 100%;
 }
 
-/* --- PERMITIR QUE EL VISOR DE IMÁGENES SE PONGA POR ENCIMA --- */
+/* Botón de la Página Actual (Desactivado, Gris) */
+.pager .current {
+  display: inline-block;
+  background: #777777;
+  color: #ffffff !important;
+  padding: 0.6em 1.8em;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: default;
+  border: 1px solid #777777;
+}
+
+/* Botón de la Página 2 (Activo, con el color coral de la plantilla) */
+.pager .page-link {
+  display: inline-block;
+  background: #f56a6a;
+  color: #ffffff !important;
+  padding: 0.6em 1.8em;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid #f56a6a;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pager .page-link:hover {
+  background: #f67b7b;
+  border-color: #f67b7b;
+}
+
+/* ========================================================
+   COMPATIBILIDAD CON VISORES Y MÁRGENES (Tus estilos)
+   ======================================================== */
 .image {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
-/* Si el script activa el modo pantalla completa, anulamos temporalmente el bloqueo de la tarjeta */
 body.lg-on .card, 
 body.lg-on figure,
 .lg-outer, 
 .lg-backdrop {
-    pointer-events: auto !important;
-    z-index: 999999 !important;
+  pointer-events: auto !important;
+  z-index: 999999 !important;
 }
 
-
-/* ========================================================
-   CONTROL DE ESPACIOS EN ENCABEZADOS (H1, H2, H3)
-   ======================================================== */
-
-/* El nombre de tu abuelo (asumiendo que es el H1 principal de la web) */
 h1 {
-  margin-top: -20px;    /* Espacio por arriba pequeño */
-  margin-bottom: -10px;   /* ¡CLAVE! Reducimos el espacio de abajo casi a cero */
-  line-height: 1.2;     /* Interlineado más compacto */
+  margin-top: -20px;    
+  margin-bottom: -10px;   
+  line-height: 1.2;     
 }
 
-/* El título del Álbum de Pinturas (asumiendo que es un H2) */
 h2 {
-  margin-top: -30px;    /* ¡CLAVE! Pegamos el título hacia arriba, quitando el vacío */
-  margin-bottom: -10px;  /* Espacio libre antes de que empiece la cuadrícula de cuadros */
+  margin-top: -30px;    
+  margin-bottom: -10px;  
   line-height: 1.2;
 }
 
-/* Por si usas párrafos de introducción cortos justo debajo del título */
 .introduccion {
-  margin-top: -5px;     /* Truco técnico: margen negativo por si quieres pegarlo aún más al H2 */
+  margin-top: -5px;     
   margin-bottom: 2px;
 }
