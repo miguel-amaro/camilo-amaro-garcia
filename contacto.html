@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<!--
+    Editorial by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Camilo Amaro García (Contacto)</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/contacto.css" /> <!-- Su propio CSS -->
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+
+                    <!-- Header -->
+                    <header id="header">
+                        <a href="index.html" class="logo"><strong>Camilo</strong> Amaro García</a>
+                    </header>
+
+                    <!-- Content -->
+                    <section class="seccion-contacto">
+                        <header class="main">
+                            <h2>Formulario de Contacto</h2>
+                            <p>Si deseas realizar alguna consulta, aportar material histórico o si detectas algún error de visualización en la página, puedes rellenar el siguiente formulario:</p>
+                        </header>
+
+                     <!-- Formulario con opción de adjuntar archivos -->
+<form method="post" action="#" enctype="multipart/form-data" class="formulario-web">
+    
+    <div class="grupo-formulario">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Tu nombre y apellidos" required />
+    </div>
+
+    <div class="grupo-formulario">
+        <label for="email">Correo electrónico</label>
+        <input type="email" name="email" id="email" placeholder="tu_correo@ejemplo.com" required />
+    </div>
+
+    <div class="grupo-formulario">
+        <label for="asunto">Asunto / Parentesco</label>
+        <input type="text" name="asunto" id="asunto" placeholder="Ej: Consulta, Familiar de Camilo, Coleccionista..." required />
+    </div>
+
+    <!-- NUEVO CAMPO: ADJUNTAR FOTOGRAFÍA -->
+    <div class="grupo-formulario">
+        <label for="foto_cuadro">Adjuntar fotografía del cuadro o recuerdo</label>
+        <p class="ayuda-campo">Si eres familiar o posees algún cuadro ilocalizable, boceto o fotografía antigua de mi abuelo, puedes adjuntarla aquí (Formatos sugeridos: JPG, PNG).</p>
+        <input type="file" name="foto_cuadro" id="foto_cuadro" accept="image/*" />
+    </div>
+
+    <div class="grupo-formulario">
+        <label for="mensaje">Mensaje o detalles de la obra</label>
+        <textarea name="mensaje" id="mensaje" placeholder="Cuéntame la historia del cuadro, sus dimensiones estimadas, o cualquier recuerdo que quieras compartir..." rows="6" required></textarea>
+    </div>
+
+    <div class="grupo-botones">
+        <input type="submit" value="Enviar Mensaje y Archivo" class="primary" />
+        <input type="reset" value="Limpiar" />
+    </div>
+</form>
+                    </section>
+
+                </div>
+            </div>
+
+            <!-- Sidebar (El nuevo menú limpio) -->
+          
+<div id="sidebar">
+    <div class="inner">
+
+        <!-- Menu -->
+        <nav id="menu">
+            <header class="major">
+                <h2>Menu</h2>
+            </header>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="album01.html">Album de Fotos</a></li>
+                <li><a href="pinturas01.html">Exposición de Pinturas</a></li>
+                <li><a href="anecdotas.html">Anécdotas</a></li>
+                
+                <!-- SUBMENÚ DESPLEGABLE -->
+                <li>
+                    <span class="opener">Archivo Histórico</span>
+                    <ul>
+                        <li><a href="articulos.html">Artículos de Revista</a></li>
+                        <li><a href="prensa.html">Recortes de Prensa</a></li>
+                        <li><a href="piezas.html">Documentos y Piezas Históricas</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="links.html">Enlaces</a></li>
+                <li><a href="contacto.html">Contacto</a></li> <!-- NUEVO ENLACE -->
+            </ul>
+        </nav>
+
+       <!-- Section: Miniaturas de Relleno -->
+<section>
+    <header class="major">
+        <h2>Galería</h2>
+    </header>
+    <div class="mini-posts">
+        <!-- Foto 1 -->
+        <article>
+            <span class="image fit"><img src="images/travesia.jpg" alt="Travesía Camilo Amaro" /></span>
+        </article>
+        <!-- Foto 2 -->
+        <article>
+            <span class="image fit"><img src="images/pic03.jpg" alt="Recuerdo familiar" /></span>
+        </article>
+        <!-- Foto 3 -->
+        <article>
+            <span class="image fit"><img src="images/pic02.jpg" alt="Obra de arte" /></span>
+        </article>
+		<article>
+            <span class="image fit"><img src="pinturas/callehuelmasinmarco.jpg" alt="Obra de arte" /></span>
+        </article>
+    </div>
+</section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Pagina Web rediseñada por Miguel Angel Amaro Soriano, de la plantilla Editorial de <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
+
+    </div>
+</div>
+
+			</div>
+
+		<!-- Scripts -->
+				
+				
+				
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+				
+				<script>
+  Fancybox.bind("[data-fancybox]", {
+    Images: { Panzoom: { maxScale: 3 } } // Permite ampliar la foto hasta 3 veces su tamaño real en PC
+  });
+</script>
+
+	</body>
+</html>

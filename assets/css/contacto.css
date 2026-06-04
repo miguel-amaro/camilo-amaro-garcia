@@ -1,0 +1,105 @@
+/* ========================================================
+   ESTILOS PROPIOS PARA LA PÁGINA DE CONTACTO
+   ======================================================== */
+.seccion-contacto {
+    max-width: 800px; /* Ancho ideal para que el formulario no se estire demasiado */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.seccion-contacto h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.seccion-contacto p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Estructura del formulario */
+.formulario-web {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.grupo-formulario {
+    margin-bottom: 22px;
+}
+
+.grupo-formulario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+/* Campos de texto y textarea */
+.formulario-web input[type="text"],
+.formulario-web input[type="email"],
+.formulario-web textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #f8fafc;
+    color: #334155;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formulario-web input[type="text"]:focus,
+.formulario-web input[type="email"]:focus,
+.formulario-web textarea:focus {
+    border-color: #f56a6a; /* Tu color coral corporativo */
+    box-shadow: 0 0 0 3px rgba(245, 106, 106, 0.15);
+    outline: none;
+    background-color: #ffffff;
+}
+
+/* Botones de acción */
+.grupo-botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Ajusta los anchos de los botones si los quieres más estrechos */
+.formulario-web input[type="submit"],
+.formulario-web input[type="reset"] {
+    padding: 0 2em !important;
+    height: 3.5em;
+    line-height: 3.5em;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* Estilos para el campo de adjuntar archivo */
+.ayuda-campo {
+    font-size: 0.88rem !important;
+    color: #64748b;
+    margin-top: -4px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.formulario-web input[type="file"] {
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px dashed #cbd5e1;
+    width: 100%;
+    cursor: pointer;
+    color: #475569;
+}
+
+.formulario-web input[type="file"]:hover {
+    border-color: #f56a6a;
+    background: #fdf2f2;
+}

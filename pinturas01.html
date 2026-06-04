@@ -186,80 +186,85 @@
                 </div>
             </div>
 
-            <div id="sidebar">
-                <div class="inner">
+           <!-- Sidebar -->
+<div id="sidebar">
+    <div class="inner">
 
-                    <nav id="menu">
-                        <header class="major">
-                            <h2>Menu</h2>
-                        </header>
-                        <ul>
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="articulos.html">Artículos</a></li>
-                            <li><a href="album01.html">Album de Fotos</a></li>
-                            <li><a href="pinturas01.html">Exposición de Pinturas</a></li>
-                            <li><a href="#">Anécdotas</a></li>
-                            <li><a href="#">Recortes de Prensa</a></li>
-                            <li><a href="links.html">Enlaces</a></li>
-                        </ul>
-                    </nav>
+        <!-- Menu -->
+        <nav id="menu">
+            <header class="major">
+                <h2>Menu</h2>
+            </header>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="album01.html">Album de Fotos</a></li>
+                <li><a href="pinturas01.html">Exposición de Pinturas</a></li>
+                <li><a href="anecdotas.html">Anécdotas</a></li>
+                
+                <!-- SUBMENÚ DESPLEGABLE -->
+                <li>
+                    <span class="opener">Archivo Histórico</span>
+                    <ul>
+                        <li><a href="articulos.html">Artículos de Revista</a></li>
+                        <li><a href="prensa.html">Recortes de Prensa</a></li>
+                        <li><a href="piezas.html">Documentos y Piezas Históricas</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="links.html">Enlaces</a></li>
+                <li><a href="contacto.html">Contacto</a></li> <!-- NUEVO ENLACE -->
+            </ul>
+        </nav>
 
-                    <section>
-                        <div class="bloque-centrado novedades">
-                            <header class="major">
-                                <h2>Ultimas Novedades</h2>
-                            </header>
-                            <div class="mini-posts">
-                                <article>
-                                    <a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-                                    <p>Inauguración Travesía Camilo Amaro</p>
-                                </article>
-                                <article>
-                                    <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-                                    <p>Foto Camilo Amaro García en el servicio militar</p>
-                                </article>
-                                <article>
-                                    <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-                                    <p>Aqui irá una foto de novedad</p>
-                                </article>
-                            </div>
-                        </div>
-                    </section>
+       <!-- Section: Miniaturas de Relleno -->
+<section>
+    <header class="major">
+        <h2>Galería</h2>
+    </header>
+    <div class="mini-posts">
+        <!-- Foto 1 -->
+        <article>
+            <span class="image fit"><img src="images/travesia.jpg" alt="Travesía Camilo Amaro" /></span>
+        </article>
+        <!-- Foto 2 -->
+        <article>
+            <span class="image fit"><img src="images/pic03.jpg" alt="Recuerdo familiar" /></span>
+        </article>
+        <!-- Foto 3 -->
+        <article>
+            <span class="image fit"><img src="images/pic02.jpg" alt="Obra de arte" /></span>
+        </article>
+		<article>
+            <span class="image fit"><img src="pinturas/callehuelmasinmarco.jpg" alt="Obra de arte" /></span>
+        </article>
+    </div>
+</section>
 
-                    <section>
-                        <div class="bloque-centrado contacto">
-                            <header class="major">
-                                <h2>Consultas</h2>
-                            </header>
-                            <p><span class="caption-text">Si deseas realizar alguna consulta o detectas algún error de visualización en la página con tu navegador o dispositivo, te agradecería que te pusieras en contacto conmigo. Puedes hacerlo, preferiblemente, a través de la siguiente dirección de correo electrónico:</span></p>
-                            <ul class="contact">
-                                <li class="icon solid fa-envelope"><a href="#"><p>mangelamaro@hotmail.com</p></a></li>
-                                <li class="icon solid fa-phone">644515611</li>
-                                <li class="icon solid fa-home">18014 Granada (Spain)</li>
-                            </ul>
-                        </div>
-                    </section>
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Pagina Web rediseñada por Miguel Angel Amaro Soriano, de la plantilla Editorial de <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
 
-                    <footer id="footer">
-                        <p class="copyright">&copy; Pagina Web rediseñada por Miguel Angel Amaro Soriano, tomando como diseño una plantilla de <a href="https://html5up.net">HTML5 UP</a>.</p>
-                    </footer>
+    </div>
+</div>
 
-                </div>
-            </div>
+			</div>
 
-        </div>
+		<!-- Scripts -->
+				
+				
+				
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+				
+				<script>
+  Fancybox.bind("[data-fancybox]", {
+    Images: { Panzoom: { maxScale: 3 } } // Permite ampliar la foto hasta 3 veces su tamaño real en PC
+  });
+</script>
 
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-        
-        <script>
-            Fancybox.bind("[data-fancybox]", {
-                Images: { Panzoom: { maxScale: 3 } }
-            });
-        </script>
-
-    </body>
+	</body>
 </html>

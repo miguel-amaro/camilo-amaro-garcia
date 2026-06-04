@@ -1,0 +1,50 @@
+/* ========================================================
+   ESTILOS PROPIOS PARA ANÉCDOTAS
+   ======================================================== */
+.seccion-anecdotas {
+    max-width: 900px; /* Un poco más estrecho para facilitar la lectura de textos largos */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.seccion-anecdotas h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.seccion-anecdotas h3 {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-weight: normal;
+}
+
+.contenedor-anecdotas {
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* Espacio entre una historia y otra */
+}
+
+/* Las cajitas de las historias */
+.bloque-anecdota {
+    background: #ffffff;
+    border-left: 4px solid #f56a6a; /* Detalle de color elegante en el lateral */
+    padding: 20px 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 0 8px 8px 0;
+}
+
+.bloque-anecdota h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+    color: #1e293b;
+    font-weight: bold;
+}
+
+.bloque-anecdota p {
+    margin: 0;
+    line-height: 1.7;
+    color: #4a5568;
+    font-size: 1.05rem;
+}

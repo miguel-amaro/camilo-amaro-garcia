@@ -1,0 +1,100 @@
+/* ========================================================
+   ESTILOS PROPIOS PARA PRENSA (HEMEROTECA)
+   ======================================================== */
+.seccion-prensa {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.seccion-prensa h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.seccion-prensa h3 {
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: normal;
+    font-size: 1.1rem;
+}
+
+/* El contenedor independiente de recortes */
+.cuadrilla-prensa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 20px 0;
+    align-items: start;
+}
+
+/* Tarjeta base para los recortes */
+.tarjeta-prensa {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-prensa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Recortes cortos: se alinean de 2 en 2 */
+.recorte-corto {
+    flex: 1 1 calc(50% - 25px);
+    min-width: 320px;
+}
+
+/* Recortes largos: ocupan toda la línea horizontal (100%) */
+.recorte-largo {
+    flex: 1 1 100%;
+}
+
+/* Marco para simular papel o fondo neutro para las capturas */
+.marco-prensa {
+    width: 100%;
+    height: auto;
+    background-color: #f7f9fa; /* Un gris/azul clarito muy limpio de archivo */
+    display: block;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.marco-prensa img {
+    width: auto;          
+    max-width: 100%;      
+    max-height: 500px; /* Más margen de altura para recortes de periódico largos */
+    display: block;
+    margin: 0 auto;       
+    object-fit: contain;  
+}
+
+/* Leyendas de los recortes */
+.leyenda-prensa {
+    padding: 15px;
+    text-align: center;
+    background-color: #fafafa;
+    border-top: 1px solid #edf2f7;
+    margin-top: auto;
+}
+
+.leyenda-prensa h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.15rem;
+    color: #2d3748;
+    font-weight: bold;
+}
+
+.leyenda-prensa p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #718096;
+}
