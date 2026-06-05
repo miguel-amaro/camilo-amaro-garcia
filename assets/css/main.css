@@ -2433,7 +2433,7 @@ article.seccion-archivo-historico {
     /* TU RUTA CORRECTA: Capa con opacidad y la imagen en la carpeta fondos */
     background-image: 
         linear-gradient(rgba(248, 248, 248, 0.5), rgba(248, 248, 248, 0.5)), 
-        url('./../../fondos/pergamino.jpg') !important;
+        url('./../../fondos/pergamino2.jpg') !important;
 }
 
 /* Ajuste sutil para que el pergamino se adapte bien en el móvil */
@@ -2516,25 +2516,56 @@ article.seccion-archivo-historico div {
 .posts article p {
     font-size: 20px !important; /* Ajusta los textos a tu gusto (estaba en 20px) */
 }
-/* AJUSTE EXCLUSIVO PARA EL PERGAMINO EN EL MÓVIL */
 
-@media (max-width: 768px) {
-    article.seccion-archivo-historico {
-        padding: 50px 15px !important;
-        background-size: cover !important;
-        background-position: center center !important;
-    }
-    
-    .seccion-archivo-historico .boton-historico span {
-        font-size: 1rem !important;
-    }
-    
-    .seccion-archivo-historico .contenedor-botones-archivo {
-        gap: 12px !important;
-        margin-bottom: 20px !important;
-    }
-    
-    .seccion-archivo-historico .contenedor-botones-archivo a.boton-historico {
-        padding: 15px 10px !important;
-    }
+/* AJUSTE EXCLUSIVO PARA EL PERGAMINO EN EL MÓVIL */
+/* ==========================================================================
+   SOLUCIÓN GEOMÉTRICA UNIFICADA (VÁLIDA PARA PC Y MÓVILES REALES)
+   ========================================================================== */
+
+/* 1. CONFIGURACIÓN DEL PERGAMINO CON ESCALA INTELIGENTE */
+article.seccion-archivo-historico {
+    position: relative !important;
+    padding: 70px 15px 40px 15px !important;
+    min-height: 450px !important;
+    background-image: url('./../../fondos/pergamino2.jpg') !important;
+    background-size: cover !important; /* Mantiene la proporción real en el móvil sin encogerla a cero */
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* 2. TEXTOS INTEGRADOS CON FUENTE ADAPTABLE */
+.seccion-archivo-historico h3 {
+    font-size: calc(18px + 0.5vw) !important; /* Mide 24px en PC y baja solo a 18px en móvil */
+    text-align: center !important;
+}
+
+.seccion-archivo-historico p {
+    font-size: calc(14px + 0.3vw) !important; /* Mide 19px en PC y baja solo a 14px en móvil */
+    text-align: center !important;
+}
+
+/* 3. COMPACTACIÓN DE BOTONES PARA EVITAR EL DESBORDE */
+.seccion-archivo-historico .contenedor-botones-archivo {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important; 
+    width: 100% !important;
+    max-width: 420px !important; /* Estrechamos la caja para que entre en la silueta del pergamino */
+    margin: 0 auto 20px auto !important;
+}
+
+.seccion-archivo-historico .contenedor-botones-archivo a.boton-historico {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    box-sizing: border-box !important;
+    background: transparent !important; 
+    border: 4px solid #f3340e !important; 
+    border-radius: 20px !important; 
+    padding: 12px 10px !important; /* Margen interno compacto para asegurar una sola línea */
+}
+
+.seccion-archivo-historico .boton-historico span {
+    font-size: calc(0.9rem + 0.2vw) !important; /* Escala de texto protegida contra zooms del sistema */
 }
