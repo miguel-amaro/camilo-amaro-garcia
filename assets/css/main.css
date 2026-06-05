@@ -2523,15 +2523,28 @@ article.seccion-archivo-historico div {
    ========================================================================== */
 
 /* 1. CONFIGURACIÓN DEL PERGAMINO CON ESCALA INTELIGENTE */
+/* EL ARTICLE SE QUEDA SOLO COMO CONTENEDOR FLUIDO */
 article.seccion-archivo-historico {
     position: relative !important;
-    padding: 70px 15px 40px 15px !important;
-    min-height: 450px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+}
+
+/* TU NUEVO DIV CONTROLA EL PERGAMINO EN PC Y MÓVILES */
+.caja-pergamino {
     background-image: url('./../../fondos/pergamino2.jpg') !important;
-    background-size: cover !important; /* Mantiene la proporción real en el móvil sin encogerla a cero */
+    background-size: 100% 100% !important; /* Fuerza al pergamino a encajar exacto en la silueta */
     background-position: center center !important;
     background-repeat: no-repeat !important;
+    
+    /* PADDING COMPACTO PROTEGIDO PARA MÓVILES REALES */
+    padding: 65px 25px 45px 25px !important; 
+    min-height: 440px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
+
 
 /* 2. TEXTOS INTEGRADOS CON FUENTE ADAPTABLE */
 .seccion-archivo-historico h3 {
