@@ -2457,15 +2457,20 @@ article.seccion-archivo-historico {
 .seccion-archivo-historico .contenedor-botones-archivo a.boton-historico {
     display: block !important;
     width: 100% !important;
-    padding: 13px 15px !important; 
     text-align: center !important;
     text-decoration: none !important;
     box-sizing: border-box !important;
     background: transparent !important; 
-    border: 8px solid #f3340e !important; 
     border-radius: 20px !important; 
     transition: all 0.3s ease !important;
+
+    /* TU NUEVO COLOR MANTENIDO AL 100% */
+    border: 4px solid #f3340e !important; 
+    
+    /* AJUSTE DE AIRE: Bajamos el relleno de los lados a 8px para ganar espacio */
+    padding: 15px 8px !important; 
 }
+
 
 /* Efecto hover de los 3 botones */
 .seccion-archivo-historico .contenedor-botones-archivo a.boton-historico:hover {
