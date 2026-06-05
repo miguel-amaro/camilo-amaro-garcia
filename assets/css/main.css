@@ -2452,17 +2452,13 @@ body.is-sidebar-visible #sidebar {
    CONFIGURACIÓN INTEGRADA EXCLUSIVA PARA EL PERGAMINO (ARTÍCULO 3)
    ========================================================================== */
 
-/* 2. EL ARTICLE SE QUEDA COMO EL CONTENEDOR CON LA LÍNEA SEPARATORIA GRIS */
+/* 2. EL ARTICLE MANTIENE SU COMPORTAMIENTO NATIVO DE COLUMNA DE LA PLANTILLA */
 article.seccion-archivo-historico {
     position: relative !important;
     padding: 0 !important;
-    margin: 0 auto !important;
-    width: 100% !important;
     
-    /* Esto recupera la separación exacta y discreta con el siguiente bloque */
+    /* El espacio de separación compacto por abajo y la línea gris oficial */
     margin-bottom: 2em !important; 
-    
-    /* Esto pinta la línea gris oficial idéntica al resto de la web */
     border-bottom: solid 2px rgba(210, 215, 217, 0.75) !important; 
     padding-bottom: 2em !important; 
 }
@@ -2476,17 +2472,21 @@ article.seccion-archivo-historico div {
     margin-right: auto !important;
 }
 
-/* 3. TU DIV ENVOLVEDOR CON EL PERGAMINO REDUCIDO A 1200PX */
+/* 3. TU DIV ENVOLVEDOR PROTEGE EL TAMAÑO EN PC Y EN MÓVIL */
 .caja-pergamino {
     background-image: url('./../../fondos/pergamino2.jpg') !important;
     background-size: 100% 100% !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     
-    /* Subimos a 85px arriba para bajar el texto e integrar los botones en el centro */
+    /* Los 85px de arriba bajan los botones para no pisar el doblez */
     padding: 85px 25px 45px 25px !important; 
     min-height: 460px !important; 
+    
+    /* CONTROL DE GEOMETRÍA: Se adapta al móvil pero no se desparrama en el PC */
     width: 100% !important;
+    max-width: 450px !important; 
+    margin: 0 auto !important; /* Centra el pergamino limpiamente dentro de su columna */
     box-sizing: border-box !important;
 }
 
@@ -2510,13 +2510,11 @@ article.seccion-archivo-historico div {
 .seccion-archivo-historico .contenedor-botones-archivo {
     display: flex !important;
     flex-direction: column !important;
-    
-    /* El margen superior de 35px baja todo el bloque alejándolo del doblez enrollado */
     margin-top: 35px !important; 
     gap: 12px !important; 
     width: 100% !important;
     max-width: 420px !important; 
-    margin-left: 0 auto 20px auto !important;
+    margin: 0 auto 20px auto !important;
 }
 
 /* Estilo individual de los botones: Transparentes con tu nuevo color */
@@ -2529,7 +2527,7 @@ article.seccion-archivo-historico div {
     background: transparent !important; 
     border-radius: 20px !important; 
     transition: all 0.3s ease !important;
-    border: 4px solid #f3340e !important; /* Tu color rojo/naranja */
+    border: 4px solid #f3340e !important; 
     padding: 12px 10px !important; 
 }
 
