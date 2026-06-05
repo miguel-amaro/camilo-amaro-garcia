@@ -2532,18 +2532,27 @@ article.seccion-archivo-historico {
 }
 
 /* TU NUEVO DIV CONTROLA EL PERGAMINO EN PC Y MÓVILES */
+/* TU NUEVO DIV SE ENCARGA DEL PERGAMINO */
 .caja-pergamino {
     background-image: url('./../../fondos/pergamino2.jpg') !important;
-    background-size: 100% 100% !important; /* Fuerza al pergamino a encajar exacto en la silueta */
+    background-size: 100% 100% !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     
-    /* PADDING COMPACTO PROTEGIDO PARA MÓVILES REALES */
-    padding: 65px 25px 45px 25px !important; 
-    min-height: 440px !important;
+    /* Ajustamos el relleno: le damos 80px arriba para proteger el doblez */
+    padding: 80px 25px 45px 25px !important; 
+    min-height: 460px !important; /* Subimos 20px la altura para dar espacio abajo */
     width: 100% !important;
     box-sizing: border-box !important;
 }
+
+/* BAJAMOS LOS BOTONES EN BLOQUE PARA INTEGRARLOS EN EL CENTRO */
+.seccion-archivo-historico .contenedor-botones-archivo {
+    margin-top: 25px !important; /* Este margen empuja los botones hacia abajo alejándolos del doblez */
+    gap: 12px !important;
+    margin-bottom: 20px !important;
+}
+
 
 
 /* 2. TEXTOS INTEGRADOS CON FUENTE ADAPTABLE */
