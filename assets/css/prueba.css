@@ -68,3 +68,24 @@
 .contenedor-indicador:hover .flecha-vectorial {
   color: #ff5252;    /* Color de contraste cuando el usuario pasa el ratón */
 }
+
+article.seccion-archivo-historico {
+    position: relative !important;
+    background-color: #f8f8f8 !important;
+    
+    /* Ruta de la imagen y configuración para que siempre se vea */
+    background-image: url('boton/libro-antiguo.png') !important; 
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: contain !important; /* 'contain' asegura que se vea entera sin cortarse */
+    
+    /* Padding para que el contenido no tape la imagen */
+    padding: 60px 20px !important; 
+    
+    /* Altura mínima para asegurar que el área de la imagen exista */
+    min-height: 350px !important; 
+    
+    /* Quitamos el origin y clip que estaban ocultando la imagen */
+    background-origin: border-box !important; 
+    background-clip: border-box !important;
+}

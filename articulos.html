@@ -379,98 +379,84 @@
 										</div>		
 						</div>
 				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+<div id="sidebar">
+    <div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+        <!-- Menu -->
+        <nav id="menu">
+            <header class="major">
+                <h2>Menu</h2>
+            </header>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="album01.html">Album de Fotos</a></li>
+                <li><a href="pinturas01.html">Exposición de Pinturas</a></li>
+                <li><a href="anecdotas.html">Anécdotas</a></li>
+                
+                <!-- SUBMENÚ DESPLEGABLE -->
+                <li>
+                    <span class="opener">Archivo Histórico</span>
+                    <ul>
+                        <li><a href="articulos.html">Artículos de Revista</a></li>
+                        <li><a href="prensa.html">Recortes de Prensa</a></li>
+                        <li><a href="piezas.html">Documentos y Piezas Históricas</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="links.html">Enlaces</a></li>
+                <li><a href="contacto.html">Contacto</a></li> <!-- NUEVO ENLACE -->
+            </ul>
+        </nav>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Inicio</a></li>
-										<li><a href="articulos.html">Artículos</a></li>
-										<li><a href="album01.html">Album de Fotos</a></li>
-										<li>
-											<span class="opener">Submenú Album</span>
-											<ul>
-												<li><a href="#">Pagina 1</a></li>
-												<li><a href="#">Pagina 2</a></li>
-												<li><a href="#">Pagina 3</a></li>
-												<li><a href="#">Pagina 4</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Anécdotas</a></li>
-										<li><a href="#">Pinturas</a></li>
-										<li>
-											<span class="opener">Otro Submenu</span>
-											
-										</li>
-										
-									</ul>
-								</nav>
+       <!-- Section: Miniaturas de Relleno -->
+<section>
+    <header class="major">
+        <h2>Galería</h2>
+    </header>
+    <div class="mini-posts">
+        <!-- Foto 1 -->
+        <article>
+            <span class="image fit"><img src="images/travesia.jpg" alt="Travesía Camilo Amaro" /></span>
+        </article>
+        <!-- Foto 2 -->
+        <article>
+            <span class="image fit"><img src="images/pic03.jpg" alt="Recuerdo familiar" /></span>
+        </article>
+        <!-- Foto 3 -->
+        <article>
+            <span class="image fit"><img src="images/pic02.jpg" alt="Obra de arte" /></span>
+        </article>
+		<article>
+            <span class="image fit"><img src="pinturas/callehuelmasinmarco.jpg" alt="Obra de arte" /></span>
+        </article>
+    </div>
+</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Pagina Web rediseñada por Miguel Angel Amaro Soriano, de la plantilla Editorial de <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
+    </div>
+</div>
 
 			</div>
 
 		<!-- Scripts -->
+				
+				
+				
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+				
+				<script>
+  Fancybox.bind("[data-fancybox]", {
+    Images: { Panzoom: { maxScale: 3 } } // Permite ampliar la foto hasta 3 veces su tamaño real en PC
+  });
+</script>
 
 	</body>
 </html>

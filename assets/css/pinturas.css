@@ -68,7 +68,7 @@
 .marco-foto {
   width: 100%;
   height: auto;
-  background-color: #efdfc6; /* Fondo limpio beige */
+  background-color: #ffffff; /* Fondo limpio beige */
   display: block;
   padding: 15px;
   box-sizing: border-box;
@@ -188,4 +188,25 @@ h2 {
 .introduccion {
   margin-top: -5px;     
   margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   CÓDIGO ORIGINAL REPARADO: PLANO Y CON LA ALINEACIÓN DE SIEMPRE
+   ========================================================================== */
+
+.marco-blanco-cuadro {
+    background-color: #ffffff !important; /* Tu paspartú blanco de siempre */
+    padding: 15px !important;             /* Tus 15px de margen */
+    display: block !important;
+    border: 1px solid #dcdcdc !important; /* La línea fina gris */
+}
+
+.marco-blanco-cuadro img {
+    background-color: transparent !important; /* AQUÍ ESTÁ EL TRUCO: evita el blanco fantasma del cuadro 3 */
+    padding: 0px !important;
+    margin: 0px !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: none !important;              /* Completamente plano */
 }
