@@ -2548,7 +2548,7 @@ article.seccion-archivo-historico {
 
 /* BAJAMOS LOS BOTONES EN BLOQUE PARA INTEGRARLOS EN EL CENTRO */
 .seccion-archivo-historico .contenedor-botones-archivo {
-    margin-top: 25px !important; /* Este margen empuja los botones hacia abajo alejándolos del doblez */
+    margin-top: 30px !important; /* Este margen empuja los botones hacia abajo alejándolos del doblez */
     gap: 12px !important;
     margin-bottom: 20px !important;
 }
