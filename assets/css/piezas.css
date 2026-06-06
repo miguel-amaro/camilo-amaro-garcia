@@ -23,7 +23,7 @@
 .cuadrilla-variado {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 60px;
     margin: 20px 0;
 }
 
