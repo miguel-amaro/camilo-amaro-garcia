@@ -2445,6 +2445,7 @@ body.is-sidebar-visible #sidebar {
 
 .posts article p {
     font-size: 20px !important; 
+    color: #000000 !important;
 }
 
 
