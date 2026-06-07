@@ -210,3 +210,12 @@ h2 {
     height: auto !important;
     box-shadow: none !important;              /* Completamente plano */
 }
+
+/* Corrección quirúrgica exclusiva para las tarjetas horizontales */
+.tarjeta-horizontal .marco-blanco-cuadro img {
+    width: auto !important;          /* Le quitamos la obligación de estirarse a lo ancho */
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 300px !important;    /* Cambia este número para subir/bajar y jugar con la alineación */
+    margin: 0 auto !important;       /* SOLUCIÓN: Centra la imagen horizontalmente dentro del paspartú */
+}

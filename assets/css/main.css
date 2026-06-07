@@ -2449,7 +2449,7 @@ body.is-sidebar-visible #sidebar {
 
 
 /* ==========================================================================
-   CONFIGURACIÓN INTEGRADA EXCLUSIVA PARA EL PERGAMINO (ARTÍCULO 3)
+   CONFIGURACIÓN DEL ARCHIVO HISTORICO: PERGAMINO, BOTONES Y TEXTOS CENTRADOS
    ========================================================================== */
 
 /* 2. EL ARTICLE MANTIENE SU COMPORTAMIENTO NATIVO DE COLUMNA DE LA PLANTILLA */
@@ -2507,41 +2507,65 @@ article.seccion-archivo-historico div {
    ========================================================================== */
 
 /* 4. CONTENEDOR QUE AGRUPA LOS BOTONES EN LA ZONA LISA DEL PAPEL */
+/* BLOQUE FÁCIL: cambia solo los dos valores HEX abajo */
+.seccion-archivo-historico .caja-pergamino {
+  --naranja-principal: #ff9a3c;   /* <-- cambia ESTE (ej. #ff9a3c) */
+  --naranja-oscuro:   #952424;   /* <-- y ESTE para la línea/borde (ej. #c86400) */
+  
+  --naranja-alpha:    0.12;      /* <-- opacidad para la línea sutil (no hace falta tocar) */
+}
+
 .seccion-archivo-historico .contenedor-botones-archivo {
-    display: flex !important;
-    flex-direction: column !important;
-    margin-top: 35px !important; 
-    gap: 12px !important; 
-    width: 100% !important;
-    max-width: 420px !important; 
-    margin: 0 auto 20px auto !important;
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+  gap: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 20px auto;
 }
 
-/* Estilo individual de los botones: Transparentes con tu nuevo color */
 .seccion-archivo-historico .contenedor-botones-archivo a.boton-historico {
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    box-sizing: border-box !important;
-    background: transparent !important; 
-    border-radius: 20px !important; 
-    transition: all 0.3s ease !important;
-    border: 4px solid #f3340e !important; 
-    padding: 12px 10px !important; 
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  background: linear-gradient(180deg, var(--naranja-principal) 0%, var(--naranja-oscuro) 100%);
+  color: #000;
+  border-radius: 20px;
+  border: 0;
+  padding: 12px 10px;
+
+  /* línea fina exterior: usa color oscuro con alpha */
+  border: 1px solid #000000; /* <-- línea de borde del pergamino, usa el mismo color oscuro pero sin alpha */;
+  outline-offset: 0;
+
+  /* profundidad por defecto */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.18), inset 0 -2px 0 rgba(0,0,0,0.06);
+  transform: translateY(0);
+
+  transition: transform 0.18s cubic-bezier(.2,.9,.2,1), box-shadow 0.18s, filter 0.18s;
 }
 
-/* Efecto hover elegante al pasar el ratón */
 .seccion-archivo-historico .contenedor-botones-archivo a.boton-historico:hover {
-    background-color: rgba(255, 153, 51, 0.1) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.22), inset 0 -2px 0 rgba(0,0,0,0.04);
+  filter: brightness(1.03);
 }
 
-/* El texto interior de los 3 botones protegido contra zooms */
+.seccion-archivo-historico .contenedor-botones-archivo a.boton-historico:focus {
+  outline: 3px solid rgba(255,154,60,0.25);
+  outline-offset: 4px;
+}
+
 .boton-historico span {
-    color: #000000 !important; 
-    font-weight: 800 !important;
-    font-size: calc(0.9rem + 0.2vw) !important; 
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    display: block !important;
+  color: #000;
+  font-weight: 800;
+  font-size: calc(0.9rem + 0.2vw);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.12);
 }
