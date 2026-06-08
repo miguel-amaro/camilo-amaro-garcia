@@ -28,7 +28,7 @@ html, body {
   width: 92%;
   max-width: var(--container-width);
   margin: 0 auto;
-}
+ }
 
 /* Header */
 .site-header {
@@ -47,13 +47,28 @@ html, body {
 }
 
 /* Paginador */
+/* Paginador - OPCIÓN 2 CORREGIDA */
 .pager {
-  display: flex;
+  display: flex !important;  /* Fuerza el modo flexbox */
   gap: .75rem;
   align-items: center;
-  justify-content: center;
-  margin: 1rem 0;
+  justify-content: center !important; /* ← ¡ESTA LÍNEA ALINEA LOS BOTONES AL CENTRO! */
+  margin: 1rem auto !important;       /* Centra la barra entera en la pantalla */
+
+  /* El tamaño de tu barra fija */
+  width: 100% !important;
+  max-width: 350px; /* Sube este número a 400px o 450px si ves que los botones están muy apretados */
+
+  /* Tu fondo y diseño */
+  background-color: #f0f4f8; /* Cambia este color por el que más te guste */
+  padding: 8px 16px;         
+  border-radius: 8px;        
 }
+
+
+
+
+
 .page-link {
   color: var(--text);
   text-decoration: none;
@@ -74,7 +89,8 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
-  margin: 1rem 0 3rem;
+  margin: 1rem 0 1rem;
+  width: 100%;
 }
 
 /* --- SOLUCIÓN: TARJETA ELÁSTICA DINÁMICA --- */
@@ -195,3 +211,28 @@ div[id*="poptrox"] {
 .fancybox-close-small, .fancybox-button--close {
     display: none !important;
 }
+
+/* Prueba con fondo con imagen desde paginas con botones iniciales hasta paginas con botones finales */
+.fondo-album {
+
+  /* 1. Mantenemos tus márgenes y espacios laterales perfectos */
+  margin-left: -50px; /* Usa el número que te funcionaba antes (ej. -30px o -50px) */
+  margin-right: -50px;
+  width: auto;
+  padding: 0 50px; 
+  box-sizing: border-box;
+
+  /* 2. Damos un pequeño respiro de espacio arriba y abajo */
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+
+  /* 3. Tus propiedades de la imagen */
+  background-image: url('./../../otros/rectangle-gold-paper.jpg') !important; 
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* 4. EL CAMBIO CLAVE: El primer valor (105%) estira la imagen hacia los lados. */
+  /* El segundo valor (96%) encoge la imagen arriba y abajo para que no pise los botones */
+  background-size: 100% 96% !important; 
+}
+
