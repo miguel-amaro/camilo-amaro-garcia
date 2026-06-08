@@ -242,7 +242,9 @@ div[id*="poptrox"] {
   /* 2. CORRECCIÓN DEL FONDO DEL ÁLBUM */
   .fondo-album {
     /* ↓ ESTA LÍNEA BORRA LA IMAGEN DE FONDO SOLO EN EL MÓVIL ↓ */
+     div.fondo-album {
     background-image: none !important; 
+    background: none !important; 
     
     /* Opcional: Si quieres un color blanco o gris muy limpio de fondo */
     background-color: #ffffff !important; 
