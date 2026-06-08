@@ -195,17 +195,8 @@ div[id*="poptrox"] {
   }
 }
 
-@media (max-width:600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-  .gallery .card, .card, figure { 
-    height: 320px !important; 
-  }
-  .site-header {
-    padding: 1rem 0;
-  }
-}
+
+
 
 /* Ocultar el botón de cierre viejo de la plantilla que se queda suelto */
 .fancybox-close-small, .fancybox-button--close {
@@ -235,4 +226,30 @@ div[id*="poptrox"] {
   /* El segundo valor (96%) encoge la imagen arriba y abajo para que no pise los botones */
   background-size: 100% 96% !important; 
 }
+@media (max-width:600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery .card, .card, figure { 
+    height: 320px !important; 
+  }
+  
+  /* 1. CORRECCIÓN DEL TÍTULO: Reducimos el espacio de arriba y abajo del encabezado */
+  .site-header {
+    padding: 0.5rem 0 !important; /* Bajamos de 1rem a 0.5rem para quitar el espacio exagerado */
+  }
 
+  /* 2. CORRECCIÓN DEL FONDO DEL ÁLBUM */
+  .fondo-album {
+    /* ↓ ESTA LÍNEA BORRA LA IMAGEN DE FONDO SOLO EN EL MÓVIL ↓ */
+    background-image: none !important; 
+    
+    /* Opcional: Si quieres un color blanco o gris muy limpio de fondo */
+    background-color: #ffffff !important; 
+
+    /* Quitamos los márgenes negativos y los paddings exagerados para que vuelva a la normalidad */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 0 !important;
+  }
+}
