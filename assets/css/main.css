@@ -2570,3 +2570,27 @@ article.seccion-archivo-historico div {
   display: block;
   text-shadow: 0 1px 0 rgba(255,255,255,0.12);
 }
+
+/* Ajustes accesibilidad para la leyenda de Fancybox v5 */
+.fancybox__caption {
+  font-size: 1.75rem !important;      /* aumenta tamaño de letra */
+  line-height: 1.4 !important;
+  color: #ffffff !important;          /* texto blanco */
+  background: rgba(0,0,0,0.75) !important; /* fondo oscuro para contraste */
+  padding: 16px 12px !important;
+  border-radius: 6px !important;
+  max-width: 90% !important;
+  margin: 10px auto !important;
+  text-align: center !important;
+}
+
+/* Asegura que el contenido interno herede el tamaño y contraste */
+.fancybox__caption * {
+  font-size: inherit !important;
+  color: inherit !important;
+}
+
+/* Ajustes para pantallas pequeñas (evita desbordes) */
+@media (max-width: 480px) {
+  .fancybox__caption { font-size: 1.05rem !important; padding: 10px 8px !important; }
+}
