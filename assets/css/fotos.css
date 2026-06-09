@@ -242,7 +242,7 @@ div[id*="poptrox"] {
   /* 2. CORRECCIÓN DEL FONDO DEL ÁLBUM */
   .fondo-album {
     /* ↓ ESTA LÍNEA BORRA LA IMAGEN DE FONDO SOLO EN EL MÓVIL ↓ */
-     div.fondo-album 
+     div.fondo-album {
     background-image: none !important; 
     background: none !important; 
     
@@ -254,3 +254,5 @@ div[id*="poptrox"] {
     margin-right: 0 !important;
     padding: 0 !important;
   }
+}
+}
