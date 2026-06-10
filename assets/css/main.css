@@ -2594,3 +2594,18 @@ article.seccion-archivo-historico div {
 @media (max-width: 480px) {
   .fancybox__caption { font-size: 1.05rem !important; padding: 10px 8px !important; }
 }
+
+/* Fancybox siempre arriba */
+.fancybox__container {
+  z-index: 9999999 !important;
+}
+
+/* Ocultar sidebar y el overlay oscuro de la plantilla al abrir Fancybox */
+body.with-fancybox .sidebar,
+body.with-fancybox #sidebar,
+body.with-fancybox .menu-overlay,
+body.with-fancybox .overlay,
+body.with-fancybox .site-overlay,
+body.with-fancybox .nav-overlay {
+  display: none !important;
+}
