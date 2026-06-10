@@ -218,8 +218,30 @@ El objetivo de este proyecto familiar es reunir y compartir todo su legado cultu
 			<script src="assets/js/main.js"></script>
 				
 				<script>
-  Fancybox.bind("[data-fancybox]", {
-    Images: { Panzoom: { maxScale: 3 } } // Permite ampliar la foto hasta 3 veces su tamaño real en PC
+  document.addEventListener("DOMContentLoaded", function() {
+    // 1. Inicialización normal (para que siga funcionando todo lo demás)
+    Fancybox.bind("[data-fancybox]", {
+      Images: { Panzoom: { maxScale: 3 } }
+    });
+
+    // 2. SOLUCIÓN DE EMERGENCIA PARA MÓVIL (Fase de Captura)
+    // El 'true' al final es la clave: intercepta el clic ANTES que cualquier otro script del menú móvil
+    document.addEventListener("click", function(e) {
+      // Busca si lo que se ha pulsado es (o está dentro de) un enlace con data-fancybox
+      let targetLink = e.target.closest("a[data-fancybox]");
+      
+      // Si existe ese enlace Y estamos en una pantalla de tamaño móvil (ej. menos de 768px)
+      if (targetLink && window.innerWidth <= 768) {
+        e.preventDefault();      // Evita que el navegador abra la imagen en crudo
+        e.stopPropagation();     // Evita que el menú móvil interfiera o se cierre bruscamente
+        
+        // Abre Fancybox manualmente con la URL de ese enlace
+        Fancybox.show([{
+          src: targetLink.href,
+          type: "image"
+        }]);
+      }
+    }, true); // <--- ESTE 'true' ES LA CLAVE MÁGICA
   });
 </script>
 
