@@ -10,7 +10,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
+		<link rel="stylesheet" href="assets/css/fotos.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+
+				</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -33,162 +39,221 @@
 								</header>
 
 							<!-- Content -->
-								
-							
-
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Álbum — Página 2</title>
-  <link rel="stylesheet" href="assets/css/fotos.css" />
-</head>
-<body>
   <header id="header" class="site-header">
     <div class="container">
-      <h1 class="logo"><h1>Mi Álbum</h1>
-      <p class="subtitle">Página 2</p>
+      <h1>Álbum de Fotos</h1>
+      <p class="subtitle">PÁGINA 2</p>
     </div>
   </header>
 
-  <div class="en-construccion">
-  <!-- Debajo cambia el enlace de unspash.com por el nombre de tu foto (ejemplo: mis-obras.jpg) -->
-  <img src="images/construccion.jpg" alt="Página en construcción">
-	  
-  
-  <div class="construccion-info">
-    <h2>Página en Construcción</h2>
-    <p>Estamos ordenando el álbum de fotos. Muy pronto estará disponible esta sección.</p>
-    <div class="barra-progreso"><div></div></div>
-  </div>
+  <main class="container">
+
+
+<div class="fondo-album">
+ 
+    <nav class="pager top-pager">
+      <a class="page-link" href="album01.html">Página 1</a>
+      <span class="current">Página 2</span>
+      <a class="page-link" href="album03.html">Página 3</a>
+    </nav>
+
+   <section class="gallery">
+  <figure class="card horizontal">
+    <a href="images/pic12.jpg" data-fancybox="galeria">
+      <img src="images/pic12.jpg" alt="Camilo Amaro García en su Farmacia en Huelma">
+    </a>
+    <figcaption><span class="caption-text">Camilo Amaro García con algunos familiares</span></figcaption>
+  </figure>
+
+  <figure class="card horizontal">
+    <a href="images/pic11.jpg" data-fancybox="galeria">
+      <img src="images/pic11.jpg" alt="Camilo Amaro con sus seis hijos en 1945">
+    </a>
+    <figcaption>
+      <span class="caption-text">Camilo Amaro con su nieto Miguel Angel Amaro Soriano en brazos (usease yo) y algunos familiares y amigos</span></figcaption>
+  </figure>
+
+  <figure class="card vertical">
+    <a href="images/pic13.jpg" data-fancybox="galeria">
+      <img src="images/pic13.jpg" alt="Texto vertical">
+    </a>
+    <figcaption><span class="caption-text">Camilo Amaro con su nieto Camilo Amaro Soriano</span></figcaption>
+  </figure>
+
+  <figure class="card horizontal">
+    <a href="images/cag-agustin-pepe.jpg" data-fancybox="galeria">
+      <img src="images/cag-agustin-pepe-.jpg" alt="Descripción 4">
+    </a>
+    <figcaption><span class="caption-text">Camilo Amaro con sus hijos Agustín y Pepe</span></figcaption>
+  </figure>
+
+  <figure class="card horizontal promo">
+    <a href="images/cag-nieto.jpg" data-fancybox="galeria">
+      <img src="images/cag-nieto.jpg" alt="Descripción 5">
+    </a>
+    <figcaption><span class="caption-text">Camilo Amaro con un nieto</span></figcaption>
+    <div class="promo-box"></div>
+  </figure>
+
+  <figure class="card horizontal">
+    <a href="images/cag-con-nieto.jpg" data-fancybox="galeria">
+      <img src="images/cag-con-nieto.jpg" alt="Descripción 6">
+    </a>
+    <figcaption><span class="caption-text">Camilo Amaro con un nieto</span></figcaption>
+  </figure>
+
+  <figure class="card horizontal">
+    <a href="images/cag-patio.jpg" data-fancybox="galeria">
+      <img src="images/cag-patio.jpg" alt="Descripción 7">
+    </a>
+    <figcaption><span class="caption-text">Descripción 7</span></figcaption>
+  </figure>
+
+  <figure class="card horizontal">
+    <a href="images/cag-nevada.jpg" data-fancybox="galeria">
+      <img src="images/cag-nevada.jpg" alt="Descripción 8">
+    </a>
+    <figcaption><span class="caption-text">Descripción 8</span></figcaption>
+  </figure>
+
+  <figure class="card vertical">
+    <a href="images/sagrario-cag.jpg" data-fancybox="galeria">
+      <img src="images/sagrario-cag.jpg" alt="Descripción 9">
+    </a>
+    <figcaption><span class="caption-text">Descripción 9</span></figcaption>
+  </figure>
+</section>
+
+
+    <nav class="pager bottom-pager">
+      <a class="page-link" href="album01.html">Página 1</a>
+      <span class="current">Página 2</span>
+      <a class="page-link" href="album03.html">Página 3</a>
+    </nav>
+
 </div>
 
-	  
-	  
-	  
-	  
-  <script>
-    document.querySelectorAll('.card img').forEach(img => {
-      img.addEventListener('click', () => {
-        const lb = document.getElementById('lightbox');
-        lb.querySelector('.lightbox-img').src = img.src;
-        lb.querySelector('.lightbox-img').alt = img.alt;
-        lb.querySelector('.lightbox-caption').textContent = img.closest('figure').querySelector('.caption-text').textContent;
-        lb.style.display = 'flex';
-        lb.setAttribute('aria-hidden', 'false');
-      });
-    });
-    document.querySelector('#lightbox .close').addEventListener('click', () => {
-      const lb = document.getElementById('lightbox');
-      lb.style.display = 'none';
-      lb.setAttribute('aria-hidden', 'true');
-    });
-    document.getElementById('lightbox').addEventListener('click', e => {
-      if (e.target === e.currentTarget) {
-        e.currentTarget.style.display = 'none';
-        e.currentTarget.setAttribute('aria-hidden', 'true');
-      }
-    });
-  </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 — Album de Fotos (Por Miguel Angel Amaro Soriano)</small>
+    </div>
+  </footer>
+
+ 
 
 							
 
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
+			<!-- Sidebar -->
+<div id="sidebar">
+    <div class="inner">
 
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
+        <!-- Menu -->
+        <nav id="menu">
+            <header class="major">
+                <h2>Menu</h2>
+            </header>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="album01.html">Album de Fotos</a></li>
+                <li><a href="pinturas01.html">Exposición de Pinturas</a></li>
+                <li><a href="anecdotas.html">Anécdotas</a></li>
+                
+                <!-- SUBMENÚ DESPLEGABLE -->
+                <li>
+                    <span class="opener">Archivo Histórico</span>
+                    <ul>
+                        <li><a href="articulos.html">Artículos de Revista</a></li>
+                        <li><a href="prensa.html">Recortes de Prensa</a></li>
+                        <li><a href="piezas.html">Documentos y Piezas Históricas</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="links.html">Enlaces</a></li>
+                <li><a href="contacto.html">Contacto</a></li> <!-- NUEVO ENLACE -->
+            </ul>
+        </nav>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Inicio</a></li>
-										<li><a href="articulos.html">Artículos</a></li>
-										<li><a href="album01.html">Album de Fotos</a></li>
-										<li>
-											<span class="opener">Submenú Album</span>
-											<ul>
-												<li><a href="#">Pagina 1</a></li>
-												<li><a href="#">Pagina 2</a></li>
-												<li><a href="#">Pagina 3</a></li>
-												<li><a href="#">Pagina 4</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Anécdotas</a></li>
-										<li><a href="#">Pinturas</a></li>
-										<li>
-											<span class="opener">Otro Submenu</span>
-											
-										</li>
-										
-									</ul>
-								</nav>
+       <!-- Section: Miniaturas de Relleno -->
+<section>
+    <header class="major">
+        <h2>Galería</h2>
+    </header>
+    <div class="mini-posts">
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
+        <!-- Foto 1 -->
+        <article>
+            <a href="images/travesia.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Inaugurada el 22/05/2026"><img src="images/travesia.jpg" 
+                alt="Travesía Camilo Amaro" /></a>
+        </article>
+        <!-- Foto 2 -->
+        <article>
+            <a href="images/pic03.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Camilo Amaro y su mujer Enriqueta"><img src="images/pic03.jpg" 
+                alt="Recuerdo familiar" /></a>
+        </article>
+        <!-- Foto 3 -->
+        <article>
+            <span class="image fit"><img src="images/pic02.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Camilo Amaro Pintor"Obra de arte" /></span>
+        </article>
+		<article>
+            <span class="image fit"><img src="pinturas/callehuelmasinmarco.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Calle del Canico de Huelma en los años 30 (Pintura de 1965)" alt="Obra de arte" /></span>
+        </article>
+    </div>
+</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Pagina Web rediseñada por Miguel Angel Amaro Soriano, de la plantilla Editorial de <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
 
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
+    </div>
+</div>
 
 			</div>
 
 		<!-- Scripts -->
+				
+				
+				
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+				
+				<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    Fancybox.bind("[data-fancybox]", {
+      Images: { Panzoom: { maxScale: 3 } }
+    });
 
+    document.addEventListener("click", function(e) {
+      let targetLink = e.target.closest("a[data-fancybox]");
+      
+      if (targetLink && window.innerWidth <= 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        let leyenda = targetLink.getAttribute("data-caption") || "";
+        
+        setTimeout(function() {
+          Fancybox.show([{
+            src: targetLink.href,
+            type: "image",
+            caption: leyenda
+          }]);
+        }, 150);
+      }
+    }, true);
+  });
+</script>
 	</body>
 </html>

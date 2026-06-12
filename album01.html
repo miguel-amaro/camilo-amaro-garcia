@@ -52,9 +52,8 @@
 <div class="fondo-album">
  
     <nav class="pager top-pager">
-      <a class="page-link" href="index.html">Página 1</a>
-      <span class="current">Página 2</span>
-      <a class="page-link" href="index3.html">Página 3</a>
+      <span class="current">Página 1</span>
+      <a class="page-link" href="album02.html">Página 2</a>
     </nav>
 
    <section class="gallery">
@@ -125,9 +124,9 @@
 
 
     <nav class="pager bottom-pager">
-      <a class="page-link" href="index.html">Página 1</a>
-      <span class="current">Página 2</span>
-      <a class="page-link" href="index3.html">Página 3</a>
+      
+      <span class="current">Página 1</span>
+      <a class="page-link" href="album02.html">Página 2</a>
     </nav>
 
 </div>
@@ -147,7 +146,7 @@
 						</div>
 					</div>
 
-				<!-- Sidebar -->
+			<!-- Sidebar -->
 <div id="sidebar">
     <div class="inner">
 
@@ -183,20 +182,27 @@
         <h2>Galería</h2>
     </header>
     <div class="mini-posts">
+
         <!-- Foto 1 -->
         <article>
-            <span class="image fit"><img src="images/travesia.jpg" alt="Travesía Camilo Amaro" /></span>
+            <a href="images/travesia.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Inaugurada el 22/05/2026"><img src="images/travesia.jpg" 
+                alt="Travesía Camilo Amaro" /></a>
         </article>
         <!-- Foto 2 -->
         <article>
-            <span class="image fit"><img src="images/pic03.jpg" alt="Recuerdo familiar" /></span>
+            <a href="images/pic03.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Camilo Amaro y su mujer Enriqueta"><img src="images/pic03.jpg" 
+                alt="Recuerdo familiar" /></a>
         </article>
         <!-- Foto 3 -->
         <article>
-            <span class="image fit"><img src="images/pic02.jpg" alt="Obra de arte" /></span>
+            <span class="image fit"><img src="images/pic02.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Camilo Amaro Pintor"Obra de arte" /></span>
         </article>
 		<article>
-            <span class="image fit"><img src="pinturas/callehuelmasinmarco.jpg" alt="Obra de arte" /></span>
+            <span class="image fit"><img src="pinturas/callehuelmasinmarco.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Calle del Canico de Huelma en los años 30 (Pintura de 1965)" alt="Obra de arte" /></span>
         </article>
     </div>
 </section>
@@ -222,10 +228,30 @@
 			<script src="assets/js/main.js"></script>
 				
 				<script>
-  Fancybox.bind("[data-fancybox]", {
-    Images: { Panzoom: { maxScale: 3 } } // Permite ampliar la foto hasta 3 veces su tamaño real en PC
+  document.addEventListener("DOMContentLoaded", function() {
+    Fancybox.bind("[data-fancybox]", {
+      Images: { Panzoom: { maxScale: 3 } }
+    });
+
+    document.addEventListener("click", function(e) {
+      let targetLink = e.target.closest("a[data-fancybox]");
+      
+      if (targetLink && window.innerWidth <= 768) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        let leyenda = targetLink.getAttribute("data-caption") || "";
+        
+        setTimeout(function() {
+          Fancybox.show([{
+            src: targetLink.href,
+            type: "image",
+            caption: leyenda
+          }]);
+        }, 150);
+      }
+    }, true);
   });
 </script>
-
 	</body>
 </html>
