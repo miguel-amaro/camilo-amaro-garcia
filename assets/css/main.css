@@ -2609,3 +2609,24 @@ body.with-fancybox .site-overlay,
 body.with-fancybox .nav-overlay {
   display: none !important;
 }
+
+/* Forzar la leyenda justo debajo de la foto en móvil */
+/* Ajustes para pantallas pequeñas (evita desbordes y fuerza la leyenda debajo de la foto) */
+@media (max-width: 768px) {
+  .fancybox__container .fancybox__caption,
+  .fancybox__slide .fancybox__caption {
+    font-size: 1.05rem !important; 
+    padding: 10px 8px !important;
+    background: rgba(0,0,0,0.75) !important;
+    
+    /* Forzar posición relativa para que se quede pegada a la foto */
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 15px auto 0 !important;
+  }
+}

@@ -58,7 +58,7 @@ El objetivo de este proyecto familiar es reunir y compartir todo su legado cultu
 										</ul>
 									</div>
 									
-										<a href="images/pic10.jpg" class="image" data-fancybox="galeria" data-caption="">
+										<a href="images/pic10.jpg" class="image" data-fancybox="galeria" data-caption="Camilo Amaro García con sus seis hijos">
     									<img src="images/pic10.jpg" alt="" /></a>
 									</span>
 								</section>
@@ -178,21 +178,22 @@ El objetivo de este proyecto familiar es reunir y compartir todo su legado cultu
         <article>
             <a href="images/travesia.jpg" class="image" data-fancybox="galeria" 
                 data-caption="Inaugurada el 22/05/2026"><img src="images/travesia.jpg" 
-                alt="Travesía Camilo Amaro" /></a></span>
+                alt="Travesía Camilo Amaro" /></a>
         </article>
         <!-- Foto 2 -->
         <article>
-            <span class="image fit"><img src="images/pic03.jpg" class="image" data-fancybox="galeria" 
-                data-caption="Camilo Amaro y su mujer Enriqueta" alt="Recuerdo familiar" /></span>
+            <a href="images/pic03.jpg" class="image" data-fancybox="galeria" 
+                data-caption="Camilo Amaro y su mujer Enriqueta"><img src="images/pic03.jpg" 
+                alt="Recuerdo familiar" /></a>
         </article>
         <!-- Foto 3 -->
         <article>
             <span class="image fit"><img src="images/pic02.jpg" class="image" data-fancybox="galeria" 
-                data-caption="alt="Obra de arte" /></span>
+                data-caption="Camilo Amaro Pintor"Obra de arte" /></span>
         </article>
 		<article>
             <span class="image fit"><img src="pinturas/callehuelmasinmarco.jpg" class="image" data-fancybox="galeria" 
-                data-caption="Obra Maestra de la pintura" alt="Obra de arte" /></span>
+                data-caption="Calle del Canico de Huelma en los años 30 (Pintura de 1965)" alt="Obra de arte" /></span>
         </article>
     </div>
 </section>
@@ -219,31 +220,29 @@ El objetivo de este proyecto familiar es reunir y compartir todo su legado cultu
 				
 				<script>
   document.addEventListener("DOMContentLoaded", function() {
-    // 1. Inicialización normal (para que siga funcionando todo lo demás)
     Fancybox.bind("[data-fancybox]", {
       Images: { Panzoom: { maxScale: 3 } }
     });
 
-    // 2. SOLUCIÓN DE EMERGENCIA PARA MÓVIL (Fase de Captura)
-    // El 'true' al final es la clave: intercepta el clic ANTES que cualquier otro script del menú móvil
     document.addEventListener("click", function(e) {
-      // Busca si lo que se ha pulsado es (o está dentro de) un enlace con data-fancybox
       let targetLink = e.target.closest("a[data-fancybox]");
       
-      // Si existe ese enlace Y estamos en una pantalla de tamaño móvil (ej. menos de 768px)
       if (targetLink && window.innerWidth <= 768) {
-        e.preventDefault();      // Evita que el navegador abra la imagen en crudo
-        e.stopPropagation();     // Evita que el menú móvil interfiera o se cierre bruscamente
+        e.preventDefault();
+        e.stopPropagation();
         
-        // Abre Fancybox manualmente con la URL de ese enlace
-        Fancybox.show([{
-          src: targetLink.href,
-          type: "image"
-        }]);
+        let leyenda = targetLink.getAttribute("data-caption") || "";
+        
+        setTimeout(function() {
+          Fancybox.show([{
+            src: targetLink.href,
+            type: "image",
+            caption: leyenda
+          }]);
+        }, 150);
       }
-    }, true); // <--- ESTE 'true' ES LA CLAVE MÁGICA
+    }, true);
   });
 </script>
-
 	</body>
 </html>
