@@ -1,4 +1,4 @@
-//* ========================================================
+/* ========================================================
    ESTILOS PROPIOS PARA PRENSA (HEMEROTECA)
    ======================================================== */
 .seccion-prensa {
@@ -68,13 +68,13 @@
     box-sizing: border-box;
 }
 
-/* CAMBIO AQUÍ: Se eliminó el límite de altura para que el recorte largo se expanda hacia abajo */
 .marco-prensa img {
-    width: 100%;          /* CAMBIADO: Antes era 'auto'. Ahora ocupa el 100% del ancho disponible */
-    height: auto;         /* CAMBIADO: La altura se calcula sola proporcionalmente */
+    width: auto;          
     max-width: 100%;      
+    max-height: 500px; /* Más margen de altura para recortes de periódico largos */
     display: block;
     margin: 0 auto;       
+    object-fit: contain;  
 }
 
 /* Leyendas de los recortes */
