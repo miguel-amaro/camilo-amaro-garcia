@@ -22,11 +22,10 @@
 
 /* El contenedor independiente de recortes */
 .cuadrilla-prensa {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
+    display: block;            /* CAMBIADO: Quitamos flex/grid para usar columnas puras */
+    column-count: 2;          /* FORZADO: Máximo 2 columnas en ordenador */
+    column-gap: 25px;         /* El espacio de separación entre la columna izquierda y derecha */
     margin: 20px 0;
-    align-items: start;
 }
 
 /* Tarjeta base para los recortes */
@@ -40,7 +39,6 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-}
 
 .tarjeta-prensa:hover {
     transform: translateY(-4px);
@@ -49,13 +47,13 @@
 
 /* Recortes cortos: se alinean de 2 en 2 */
 .recorte-corto {
-    flex: 1 1 calc(50% - 25px);
-    min-width: 320px;
+    /* Eliminamos el flex: 1 1 calc... que tenías antes */
+    width: 100%; 
 }
 
 /* Recortes largos: ocupan toda la línea horizontal (100%) */
 .recorte-largo {
-    flex: 1 1 100%;
+    grid-column: 1 / -1; /* Ocupa todas las columnas disponibles */
 }
 
 /* Marco para simular papel o fondo neutro para las capturas */
@@ -81,7 +79,7 @@
 .leyenda-prensa {
     padding: 15px;
     text-align: center;
-    background-color: #fafafa;
+    background-color: #e9c7ab;
     border-top: 1px solid #edf2f7;
     margin-top: auto;
 }
@@ -89,12 +87,34 @@
 .leyenda-prensa h3 {
     margin: 0 0 6px 0;
     font-size: 1.15rem;
-    color: #2d3748;
+    color: #000000;
     font-weight: bold;
 }
 
 .leyenda-prensa p {
     margin: 0;
     font-size: 0.95rem;
-    color: #718096;
+    color: #0d0d0d;
+}
+
+ /* AÑADIDO CLAVE: Evita que un recorte se rompa a la mitad entre la columna 1 y la 2 */
+    break-inside: avoid;      
+    margin-bottom: 25px;      /* El espacio vertical entre recortes de la misma columna */
+}
+
+/* Recortes cortos: Ya no necesitan flex ni configuraciones raras */
+.recorte-corto {
+    width: 100%;              /* Se adaptan automáticamente al ancho de su columna */
+}
+
+/* Recortes largos: Si quieres que un recorte ocupe todo el ancho horizontal (saltándose las columnas) */
+.recorte-largo {
+    column-span: all;         /* Cruza de lado a lado cubriendo ambas columnas */
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .cuadrilla-prensa {
+        column-count: 1 !important; /* Fuerza al navegador a usar una sola columna */
+    }
 }
