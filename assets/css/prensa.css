@@ -60,7 +60,7 @@
 .marco-prensa {
     width: 100%;
     height: auto;
-    background-color: #f7f9fa; /* Un gris/azul clarito muy limpio de archivo */
+    background-color: #e5eff5; /* Un gris/azul clarito muy limpio de archivo */
     display: block;
     padding: 15px;
     box-sizing: border-box;
@@ -79,7 +79,7 @@
 .leyenda-prensa {
     padding: 15px;
     text-align: center;
-    background-color: #e9c7ab;
+    background-color: #ffead9;
     border-top: 1px solid #edf2f7;
     margin-top: auto;
 }
