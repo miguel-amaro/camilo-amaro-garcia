@@ -2630,3 +2630,73 @@ body.with-fancybox .nav-overlay {
     margin: 15px auto 0 !important;
   }
 }
+
+/* =========================================================
+   SOLUCIÓN: FORZAR 2 COLUMNAS EN "POSTS" (Plantilla Editorial)
+   Pegar esto al FINAL del archivo assets/css/main.css
+   ========================================================= */
+
+/* 1. MÓVIL (menos de 481px): 1 columna, sin desbordes */
+@media screen and (max-width: 480px) {
+    .posts {
+        margin: 0 0 2em 0 !important;
+        width: 100% !important;
+    }
+    .posts article {
+        width: 100% !important;
+        margin: 0 0 4.5em 0 !important;
+    }
+    .posts article:before,
+    .posts article:after {
+        display: none !important;
+    }
+}
+
+/* 2. PC / TABLET (481px o más): SIEMPRE 2 columnas, sin importar el zoom */
+@media screen and (min-width: 481px) {
+    
+    /* Forzamos el ancho al 50% menos el espacio del margen (6em es el estándar de Editorial) */
+    .posts article {
+        width: calc(50% - 6em) !important;
+    }
+
+    /* Corregimos las líneas divisorias que dibuja la plantilla para que no se rompan al cambiar a 2 columnas */
+    .posts article:nth-child(2n + 1):before {
+        display: none !important;
+    }
+    .posts article:nth-child(2n + 1):after {
+        width: 100% !important;
+    }
+    .posts article:nth-last-child(1), 
+    .posts article:nth-last-child(2) {
+        margin-bottom: 0 !important;
+    }
+    .posts article:nth-last-child(1):before, 
+    .posts article:nth-last-child(2):before {
+        height: 100% !important;
+    }
+    .posts article:nth-last-child(1):after, 
+    .posts article:nth-last-child(2):after {
+        display: none !important;
+    }
+}
+
+/* 3. AJUSTE INTERMEDIO (Tablets pequeñas, la plantilla original reduce márgenes aquí) */
+@media screen and (max-width: 736px) and (min-width: 481px) {
+    .posts {
+        margin: 0 0 2em -4.5em !important;
+        width: calc(100% + 4.5em) !important;
+    }
+    .posts article {
+        width: calc(50% - 4.5em) !important;
+        margin: 0 0 4.5em 4.5em !important;
+    }
+    .posts article:before {
+        height: calc(100% + 4.5em) !important;
+        left: -2.25em !important;
+    }
+    .posts article:after {
+        bottom: -2.25em !important;
+        width: calc(100% + 4.5em) !important;
+    }
+}
