@@ -2700,3 +2700,23 @@ body.with-fancybox .nav-overlay {
         width: calc(100% + 4.5em) !important;
     }
 }
+
+/* =========================================================
+   SOLUCIÓN SIMPLE: EVITAR QUE EL MENÚ SE OCULTE CON ZOOM
+   ========================================================= */
+
+/* Aumentamos el breakpoint para que el menú lateral 
+   se mantenga visible hasta zooms más extremos */
+@media screen and (min-width: 1280px) {
+    
+    /* Forzamos que el sidebar sea visible */
+    body.is-preload #sidebar {
+        transform: none !important;
+        margin-left: 0 !important;
+    }
+    
+    /* Ajustamos el wrapper para que no empuje el contenido */
+    body.is-preload #wrapper {
+        padding-left: 0 !important;
+    }
+}
